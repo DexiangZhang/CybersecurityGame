@@ -1,7 +1,11 @@
-html, body 
+
+
+body
 {
-	margin: 1em;
-	padding: 1em 1em;
+	background-image: url("../game_bg.jpg");
+ 	background-position: center;
+ 	background-repeat: no-repeat;
+  	background-size: cover;
 }
 
 #gameCanvas
@@ -9,4 +13,8 @@ html, body
 	display: block; 
 	width: 100%; 
 	text-align: center;
+	border-color: white;
+	border-width: thick;
+
 }
+
