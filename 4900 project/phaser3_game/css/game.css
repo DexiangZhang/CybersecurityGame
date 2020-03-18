@@ -1,0 +1,12 @@
+html, body 
+{
+	margin: 1em;
+	padding: 1em 1em;
+}
+
+#gameCanvas
+{
+	display: block; 
+	width: 100%; 
+	text-align: center;
+}
