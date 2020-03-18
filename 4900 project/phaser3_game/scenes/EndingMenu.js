@@ -1,4 +1,4 @@
-var textSentence = [
+var textSentence_2 = [
 
 			"Thank you for your hard\n working this year",
 			"Let's how you doing this \n year. Don't be nervous. \n Take it easy ",
@@ -66,7 +66,7 @@ class EndingMenu extends Phaser.Scene
 			fill: "red"
 		});
 	
-		speech = this.add.text(370,110, textSentence[index], {
+		speech = this.add.text(370,110, textSentence_2[index], {
 			font: "23px Arial", 
 			fill: "black"
 		});
@@ -141,7 +141,7 @@ class EndingMenu extends Phaser.Scene
 				}
 			}
 
-     		speech.setText(textSentence[index]);
+     		speech.setText(textSentence_2[index]);
     	}
 
 

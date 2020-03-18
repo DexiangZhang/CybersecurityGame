@@ -1,4 +1,4 @@
-var textSentence = [
+var textSentence_1 = [
 
 			"Hi, welcome to Tech Inc. \n I have waiting for you \nfor long time!",
 			"I don't want to talk too  \n much, let me give you \nwhat you need to do in \nmy compnay",
@@ -58,7 +58,7 @@ class StoryScene extends Phaser.Scene
 			fill: "red"
 		});
 	
-		speech = this.add.text(370,110, textSentence[index], {
+		speech = this.add.text(370,110, textSentence_1[index], {
 			font: "23px Arial", 
 			fill: "black"
 		});
@@ -90,7 +90,7 @@ class StoryScene extends Phaser.Scene
 				});
 			}
 
-     		speech.setText(textSentence[index]);
+     		speech.setText(textSentence_1[index]);
     	}
 
 
