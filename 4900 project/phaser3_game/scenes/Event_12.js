@@ -44,6 +44,13 @@ class Event_12 extends Phaser.Scene
     		frameHeight: 225
     	});
 
+    	this.load.audio('clickButton', 'assets/music/click.mp3');
+
+    	this.load.audio('correct_sound', 'assets/music/correct.mp3');
+
+    	this.load.audio('wrong_sound', 'assets/music/wrong.mp3');
+
+
 
 	}
 
@@ -96,6 +103,13 @@ class Event_12 extends Phaser.Scene
 
 		});
 
+		this.click = this.sound.add("clickButton");
+
+		this.correct = this.sound.add("correct_sound");
+
+		this.wrong = this.sound.add("wrong_sound");
+
+
 
 		this.choice_1 = this.add.text(100, 450, 'Reject him ', { 
 			font: "bold 30px Arial", 
@@ -113,8 +127,12 @@ class Event_12 extends Phaser.Scene
 				this.box = this.add.image(512,300,"eventBox");
 				this.box.setScale(0.6);
 
+				this.click.play();
+
 				if(this.hasInternalStorage == true)
 				{
+					this.correct.play();
+
 					this.add.text(240,200, 'Nice! You made a good choice. Since you do have\n'+
 					 						'external or cloud backup. It allows you to restore\n'+
 					 						'the huge data on another computer. The external plan\n'+
@@ -143,6 +161,8 @@ class Event_12 extends Phaser.Scene
 				}
 				else 
 				{
+					this.wrong.play();
+
 					this.add.text(240,200, 'NO! the plan you have so far none of them are\n'+
 					 						'compatible to use right now. You should think\n'+
 					 						'about it if it happening in the real world. It\n'+
@@ -196,11 +216,15 @@ class Event_12 extends Phaser.Scene
 				this.box = this.add.image(512,300,"eventBox");
 				this.box.setScale(0.6);
 
+				this.click.play();
+
 				// gives number 0 or 1 randomly
 				var randomNum = Phaser.Math.Between(0, 1);
 
 				if(randomNum == 0)
 				{
+					this.correct.play();
+
 					this.add.text(240,200, 'Nice done! You use your intelligence successfully\n'+
 					 						'make hacker spend more time on you and then allows\n'+
 					 					 	'the security department to trace back to their real\n'+
@@ -228,6 +252,8 @@ class Event_12 extends Phaser.Scene
 				}
 				else 
 				{
+					this.wrong.play();
+					
 					this.add.text(240,200, 'The mission fails, it seems like the hacker has\n'+
 					 						'better intelligence than you. He doesn’t fall to\n'+
 					 						'your trap. You pay out some money to hackers for\n'+ 

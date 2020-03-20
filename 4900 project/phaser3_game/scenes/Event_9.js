@@ -42,6 +42,10 @@ class Event_9 extends Phaser.Scene
     		frameHeight: 148
     	});
 
+    	this.load.audio('payMoney', 'assets/music/pay.mp3');
+
+    	this.load.audio('clickButton', 'assets/music/click.mp3');
+
 
 	}
 
@@ -94,6 +98,9 @@ class Event_9 extends Phaser.Scene
 
 		});
 
+		this.pay = this.sound.add('payMoney');
+
+		this.click = this.sound.add("clickButton");
 
 		if(this.hasCloudStorage == true)
 		{
@@ -127,6 +134,10 @@ class Event_9 extends Phaser.Scene
 
 			this.cloud.on("pointerdown", () =>
 				{
+					this.click.play();
+
+					this.pay.play();
+
 					this.scene.start("scene_10", {
 						money: this.money - 250,
 						hasInternalStorage: this.hasInternalStorage,
@@ -172,6 +183,10 @@ class Event_9 extends Phaser.Scene
 
 			this.internal.on("pointerdown", () =>
 			{
+				this.click.play();
+
+				this.pay.play();
+
 				this.scene.start("scene_10", {
 					money: this.money - 200,
 					hasInternalStorage: true,
@@ -215,6 +230,10 @@ class Event_9 extends Phaser.Scene
 
 			this.printer.on("pointerdown", () =>
 			{
+				this.click.play();
+
+				this.pay.play();
+
 				this.scene.start("scene_10", {
 					money: this.money - 150,
 					hasInternalStorage: this.hasInternalStorage,
@@ -260,6 +279,10 @@ class Event_9 extends Phaser.Scene
 
 			this.USB.on("pointerdown", () =>
 			{
+				this.click.play();
+
+				this.pay.play();
+
 				this.scene.start("scene_10", {
 					money: this.money - 100,
 					hasInternalStorage: this.hasInternalStorage,

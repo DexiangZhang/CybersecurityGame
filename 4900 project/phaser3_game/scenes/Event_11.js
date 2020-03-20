@@ -44,6 +44,12 @@ class Event_11 extends Phaser.Scene
     		frameHeight: 300
     	});
 
+    	this.load.audio('clickButton', 'assets/music/click.mp3');
+
+    	this.load.audio('correct_sound', 'assets/music/correct.mp3');
+
+    	this.load.audio('wrong_sound', 'assets/music/wrong.mp3');
+
 
 	}
 
@@ -96,6 +102,12 @@ class Event_11 extends Phaser.Scene
 
 		});
 
+		this.click = this.sound.add("clickButton");
+
+		this.correct = this.sound.add("correct_sound");
+
+		this.wrong = this.sound.add("wrong_sound");
+
 
 		this.choice_1 = this.add.text(100, 450, 'Let’s do it  ', { 
 			font: "bold 30px Arial", 
@@ -113,8 +125,12 @@ class Event_11 extends Phaser.Scene
 				this.box = this.add.image(512,300,"eventBox");
 				this.box.setScale(0.6);
 
+				this.click.play();
+
 				if(this.hasUSBStorage == true)
 				{
+					this.correct.play();
+
 					this.add.text(240,200, 'Well done! USB is the only option in this case.\n'+
 											'It doesn’t occupy much physical space and backup\n'+
 											'speed is good when you only store few data, you \n'+
@@ -128,7 +144,7 @@ class Event_11 extends Phaser.Scene
 
 						});
 
-					let nextImage = this.add.image(230,100,"next").setOrigin(0,0);
+					let nextImage = this.add.image(230,140,"next").setOrigin(0,0);
 					nextImage.setInteractive();
 					nextImage.on("pointerdown", () =>
 					{
@@ -145,6 +161,8 @@ class Event_11 extends Phaser.Scene
 				}
 				else 
 				{
+					this.wrong.play();
+
 					this.add.text(240,200, 'Sorry! The current plan you have right now is not\n'+
 					 						'working very well in this case. You should think\n'+
 					 						'about something small and easy to carry on. Since\n'+
@@ -198,11 +216,16 @@ class Event_11 extends Phaser.Scene
 				this.box = this.add.image(512,300,"eventBox");
 				this.box.setScale(0.6);
 
+				this.click.play();
+
 				// gives number 0 or 1 randomly
 				var randomNum = Phaser.Math.Between(0, 1);
 
 				if(randomNum == 0)
 				{
+
+					this.correct.play();
+
 					this.add.text(240,200, 'Boss feels a little disappointing to you but he \n'+
 											'understands it might be difficult for a new worker.\n'+
 											'He sends you a picture of what he looking for and \n'+
@@ -230,6 +253,8 @@ class Event_11 extends Phaser.Scene
 				}
 				else 
 				{
+					this.wrong.play();
+
 					this.add.text(240,200, 'Boss is upset about your response and comes to the\n'+
 					 						'company to pick up data by himself. He thinks you\n'+
 					 						'are not doing a good job and deducted some money\n'+

@@ -39,7 +39,11 @@ class Event_7 extends Phaser.Scene
 
     	this.load.image("thinking", "assets/images/thinking_about.jpg");
 
+    	this.load.audio('clickButton', 'assets/music/click.mp3');
 
+    	this.load.audio('correct_sound', 'assets/music/correct.mp3');
+
+    	this.load.audio('wrong_sound', 'assets/music/wrong.mp3');
 	}
 
 	create()
@@ -83,6 +87,14 @@ class Event_7 extends Phaser.Scene
 		});
 
 
+		this.click = this.sound.add("clickButton");
+
+		this.correct = this.sound.add("correct_sound");
+
+		this.wrong = this.sound.add("wrong_sound");
+
+
+
 		this.choice_1 = this.add.text(100, 450, 'I got you ', { 
 			font: "bold 30px Arial", 
 			fill: "white" 
@@ -99,8 +111,13 @@ class Event_7 extends Phaser.Scene
 				this.box = this.add.image(512,300,"eventBox");
 				this.box.setScale(0.6);
 
+				this.click.play();
+
 				if(this.hasUSBStorage == true)
 				{
+
+					this.correct.play();
+
 					this.add.text(240,200, 'Nice! Boss very happy about that. The USB storage\n'+
 										   'is the most convenient portal device for transferring\n'+
 										   'the small data and the smallest device to bring out\n'+
@@ -129,6 +146,8 @@ class Event_7 extends Phaser.Scene
 				}
 				else 
 				{
+					this.wrong.play();
+
 					this.add.text(240,200, 'Oh-no… It is not very convenient for the boss to\n'+
 										   'use your plan in this situation. I mean this is not\n'+
 										   'a very big file why you bother to tell your boss to\n'+ 
@@ -182,11 +201,16 @@ class Event_7 extends Phaser.Scene
 				this.box = this.add.image(512,300,"eventBox");
 				this.box.setScale(0.6);
 
+				this.click.play();
+
 				// gives number 0 or 1 randomly
 				var randomNum = Phaser.Math.Between(0, 1);
 
 				if(randomNum == 0)
 				{
+
+					this.correct.play();
+
 					this.add.text(240,200, 'You’re lucky, boss forgives you this time because\n'+
 										   'other companies allow online transfer data to their\n'+
 										   'computer for this time.', {
@@ -213,6 +237,9 @@ class Event_7 extends Phaser.Scene
 				}
 				else 
 				{
+
+					this.wrong.play();
+					
 					this.add.text(240,200, 'Boss’s meeting gets deny because of your unsuccessful\n'+
 										   'play. He cannot go to a meeting without the information\n'+
 										   'shared to other company', {

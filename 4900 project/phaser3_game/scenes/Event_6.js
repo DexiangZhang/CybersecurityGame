@@ -43,6 +43,12 @@ class Event_6 extends Phaser.Scene
     		frameHeight: 300
     	});
 
+    	this.load.audio('clickButton', 'assets/music/click.mp3');
+
+    	this.load.audio('correct_sound', 'assets/music/correct.mp3');
+
+    	this.load.audio('wrong_sound', 'assets/music/wrong.mp3');
+
 
 	}
 
@@ -95,6 +101,13 @@ class Event_6 extends Phaser.Scene
 
 		});
 
+		this.click = this.sound.add("clickButton");
+
+		this.correct = this.sound.add("correct_sound");
+
+		this.wrong = this.sound.add("wrong_sound");
+
+
 
 		this.choice_1 = this.add.text(100, 450, 'You look at your plan', { 
 			font: "bold 30px Arial", 
@@ -112,8 +125,13 @@ class Event_6 extends Phaser.Scene
 				this.box = this.add.image(512,300,"eventBox");
 				this.box.setScale(0.6);
 
+				this.click.play();
+
+
 				if(this.hasCloudStorage == true)
 				{
+					this.correct.play();
+
 					this.add.text(240,200, 'Yaaa! You find out your data can be retrieved because\n'+
 										   'you used cloud technique to backup last time. The data\n'+
 										   'is store in another place’s server; you can retrieve\n'+
@@ -142,6 +160,8 @@ class Event_6 extends Phaser.Scene
 				}
 				else 
 				{
+					this.wrong.play();
+
 					this.add.text(240,200, 'Uh-oh. You plan not going work this time, caused the\n'+
 										   'device you store in before is either broken or\n'+
 										   'corrupted because of water.', {
@@ -194,11 +214,16 @@ class Event_6 extends Phaser.Scene
 				this.box = this.add.image(512,300,"eventBox");
 				this.box.setScale(0.6);
 
+				this.click.play();
+
 				// gives number 0 or 1 randomly
 				var randomNum = Phaser.Math.Between(0, 1);
 
 				if(randomNum == 0)
 				{
+
+					this.correct.play();
+
 					this.add.text(240,200, 'Boss forgives you and just tell you to do the thing\n'+
 										   'again since the instruction is still there. However,\n'+
 										   'time is wasted.', {
@@ -225,6 +250,8 @@ class Event_6 extends Phaser.Scene
 				}
 				else 
 				{
+					this.wrong.play();
+
 					this.add.text(240,200, 'Boss yells at you for the carelessness and deducts\n'+
 										   'money from the current balance in your department. ', {
 

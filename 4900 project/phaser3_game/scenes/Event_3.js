@@ -40,7 +40,11 @@ class Event_3 extends Phaser.Scene
     		frameHeight: 169
     	});
 
+    	this.load.audio('clickButton', 'assets/music/click.mp3');
 
+    	this.load.audio('correct_sound', 'assets/music/correct.mp3');
+
+    	this.load.audio('wrong_sound', 'assets/music/wrong.mp3');
 	}
 
 	create()
@@ -92,6 +96,12 @@ class Event_3 extends Phaser.Scene
 
 		});
 
+		this.click = this.sound.add("clickButton");
+
+		this.correct = this.sound.add("correct_sound");
+
+		this.wrong = this.sound.add("wrong_sound");
+
 
 		this.choice_1 = this.add.text(100, 450, 'Do what boss told you', { 
 			font: "bold 30px Arial", 
@@ -109,8 +119,13 @@ class Event_3 extends Phaser.Scene
 				this.box = this.add.image(512,300,"eventBox");
 				this.box.setScale(0.6);
 
+				this.click.play();
+
 				if(this.hasPrinterStorage == true)
 				{
+
+					this.correct.play();
+
 					this.add.text(240,200, 'Good job! In this situation, the printer backup is the \nonly ' +
 						'way to prevent data from being hacked. \nIt is nearly impossible for a hacker to ' +
 						'accessed data compare \nto another backup especially for universal file type', {
@@ -137,6 +152,8 @@ class Event_3 extends Phaser.Scene
 				}
 				else 
 				{
+					this.wrong.play();
+
 					this.add.text(240,200, 'Oops, Your backup method is useful and good in most \ncases for security' +
 						'However, unlucky this time your company \nfacing the professional hacker team' +
 						'Your backup got\n cracked and data being destroyed', {
@@ -189,11 +206,16 @@ class Event_3 extends Phaser.Scene
 				this.box = this.add.image(512,300,"eventBox");
 				this.box.setScale(0.6);
 
+				this.click.play();
+
 				// gives number 0 or 1 randomly
 				var randomNum = Phaser.Math.Between(0, 1);
 
 				if(randomNum == 0)
 				{
+
+					this.correct.play();
+
 					this.add.text(240,200, 'How lucky you are! since your opponent does not think\n ' +
 						'it is worth hiring a hacker to destroy especially the \nvulnerable business,' +
 						'but sadly on another side...', {
@@ -220,6 +242,8 @@ class Event_3 extends Phaser.Scene
 				}
 				else 
 				{
+					this.wrong.play();
+					
 					this.add.text(240,200, 'Oops, you know it, it is not going to be easy \n' + 
 						'to get rid of it. Your enemy wants your company to be \nkicked out from this market', {
 

@@ -1,13 +1,3 @@
-var textSentence_2 = [
-
-			"Thank you for your hard\n working this year",
-			"Let's how you doing this \n year. Don't be nervous. \n Take it easy ",
-
-		];
-
-var index =0;
-
-var speech;
 
 class EndingMenu extends Phaser.Scene
 {
@@ -41,6 +31,13 @@ class EndingMenu extends Phaser.Scene
 
 		this.load.image("Restart", "assets/UI/Restart.png");
 
+
+		this.load.audio('win', 'assets/music/win.mp3');
+
+    	this.load.audio('lose', 'assets/music/lose.mp3');
+
+    	this.load.audio('clickButton', 'assets/music/click.mp3');
+
 	}
 
 	create()
@@ -66,11 +63,16 @@ class EndingMenu extends Phaser.Scene
 			fill: "red"
 		});
 	
-		speech = this.add.text(370,110, textSentence_2[index], {
+		var speech = this.add.text(370,110, "Thank you for your hard\n working this year. \nLet's see how you doing \nthis year", {
 			font: "23px Arial", 
 			fill: "black"
 		});
 
+		this.winner = this.sound.add('win');
+
+		this.click = this.sound.add("clickButton");
+
+		this.loser = this.sound.add("lose");
 
 		this.spaceBar = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
 		
@@ -85,18 +87,16 @@ class EndingMenu extends Phaser.Scene
 
 		if (Phaser.Input.Keyboard.JustDown(this.spaceBar))
 		{
-			index +=1;
-
-			if(index >= 2)
-			{
 				if(this.money >= 3000)
 				{
+					this.winner.play();
+
 					this.box = this.add.image(512,300,"eventBox");
 					this.box.setScale(0.6);
 
-					this.add.text(330,200, 'Your Balance: ' + this.money  + '\n\n' 
-											+ 'Goal Balance: $3000' + '\n\n' + 'OMG! You are fired!',	
-						{
+					this.add.text(330,200, 'Your Balance: $' + this.money  + '\n\n' 
+											+ 'Goal Balance: $3000' + '\n\n' + 'You are promoted!',	
+						{														
 						
 						font: "bold 35px Arial", 
 						fill: "black",
@@ -108,6 +108,8 @@ class EndingMenu extends Phaser.Scene
 					replayImage.setScale(0.3);
 					replayImage.on("pointerdown", () =>
 					{
+						this.click.play();
+
 						this.scene.start("introGame");
 
 					}, this);
@@ -120,7 +122,9 @@ class EndingMenu extends Phaser.Scene
 					this.box = this.add.image(512,300,"eventBox");
 					this.box.setScale(0.6);
 
-					this.add.text(330,200, 'Your Balance: ' + this.money  + '\n\n' 
+					this.loser.play();
+
+					this.add.text(330,200, 'Your Balance: $' + this.money  + '\n\n' 
 											+ 'Goal Balance: $3000' + '\n\n' + 'OMG! You are fired!',	
 						{
 						
@@ -135,13 +139,13 @@ class EndingMenu extends Phaser.Scene
 					replayImage.setScale(0.3);
 					replayImage.on("pointerdown", () =>
 					{
+						this.click.play();
+
 						this.scene.start("introGame");
 
 					}, this);
 				}
-			}
-
-     		speech.setText(textSentence_2[index]);
+			
     	}
 
 

@@ -42,7 +42,11 @@ class Event_8 extends Phaser.Scene
 
     	this.load.image("spy", "assets/images/steal_and_destroy_info.jpg");
 
+    	this.load.audio('clickButton', 'assets/music/click.mp3');
 
+    	this.load.audio('correct_sound', 'assets/music/correct.mp3');
+
+    	this.load.audio('wrong_sound', 'assets/music/wrong.mp3');
 	}
 
 	create()
@@ -85,6 +89,12 @@ class Event_8 extends Phaser.Scene
 
 		});
 
+		this.click = this.sound.add("clickButton");
+
+		this.correct = this.sound.add("correct_sound");
+
+		this.wrong = this.sound.add("wrong_sound");
+
 
 		this.choice_1 = this.add.text(100, 450, 'You can do that ', { 
 			font: "bold 30px Arial", 
@@ -102,8 +112,12 @@ class Event_8 extends Phaser.Scene
 				this.box = this.add.image(512,300,"eventBox");
 				this.box.setScale(0.6);
 
+				this.click.play();
+
 				if(this.hasCloudStorage == true)
 				{
+					this.correct.play();
+
 					this.add.text(240,200, 'Lucky you, you bought the cloud plan before. You can\n'+
 										   'get your old data back because you just need the\n'+
 										   'internet to redownload your previous backup plan. The\n'+
@@ -133,6 +147,8 @@ class Event_8 extends Phaser.Scene
 				}
 				else 
 				{
+					this.wrong.play();
+
 					this.add.text(240,200, 'Mhmmm, are you sure you can backup data again?\n'+
 										   'Don’t you see all the devices are damaged? If\n'+
 										   'you didn’t back up data online or in someplace\n'+
@@ -186,11 +202,15 @@ class Event_8 extends Phaser.Scene
 				this.box = this.add.image(512,300,"eventBox");
 				this.box.setScale(0.6);
 
+				this.click.play();
+
 				// gives number 0 or 1 randomly
 				var randomNum = Phaser.Math.Between(0, 1);
 
 				if(randomNum == 0)
 				{
+					this.correct.play();
+
 					this.add.text(240,200, 'You find out the spy with evidence that shows he is\n'+
 										   'the enemy’s company worker. Your company and that\n'+
 										   'company go to court for this case. Court decides they\n'+
@@ -219,6 +239,8 @@ class Event_8 extends Phaser.Scene
 				}
 				else 
 				{
+					this.wrong.play();
+					
 					this.add.text(240,200, 'Your company is in the depression for backup data\n'+
 										   'loss for one month. some money that is lost in this\n'+
 										   'time is deducted from your department’s budget', {

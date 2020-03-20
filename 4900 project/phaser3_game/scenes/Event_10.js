@@ -46,6 +46,12 @@ class Event_10 extends Phaser.Scene
     		frameHeight: 150
     	});
 
+    	this.load.audio('clickButton', 'assets/music/click.mp3');
+
+    	this.load.audio('correct_sound', 'assets/music/correct.mp3');
+
+    	this.load.audio('wrong_sound', 'assets/music/wrong.mp3');
+
 
 	}
 
@@ -98,6 +104,13 @@ class Event_10 extends Phaser.Scene
 
 		});
 
+		this.click = this.sound.add("clickButton");
+
+		this.correct = this.sound.add("correct_sound");
+
+		this.wrong = this.sound.add("wrong_sound");
+
+
 
 		this.choice_1 = this.add.text(100, 450, 'show your idea to boss ', { 
 			font: "bold 30px Arial", 
@@ -115,8 +128,12 @@ class Event_10 extends Phaser.Scene
 				this.box = this.add.image(512,300,"eventBox");
 				this.box.setScale(0.6);
 
+				this.click.play();
+
 				if(this.hasInternalStorage == true)
 				{
+					this.correct.play();
+
 					this.add.text(240,200, 'Good job! Boss likes your plan. Internal/external\n'+
 										   'device is the one he looking for. It has a very \n'+
 										   'good price that can store a huge file for a very\n'+
@@ -145,6 +162,8 @@ class Event_10 extends Phaser.Scene
 				}
 				else 
 				{
+					this.wrong.play();
+
 					this.add.text(240,200, 'No! You’re wrong. This is not what he looking for.\n'+
 					 					   'There must have a better one than the one you owned.\n'+
 					 					   'It is either a large space or not last very long but\n'+
@@ -198,11 +217,16 @@ class Event_10 extends Phaser.Scene
 				this.box = this.add.image(512,300,"eventBox");
 				this.box.setScale(0.6);
 
+				this.click.play();
+
 				// gives number 0 or 1 randomly
 				var randomNum = Phaser.Math.Between(0, 1);
 
 				if(randomNum == 0)
 				{
+
+					this.correct.play();
+
 					this.add.text(240,200, 'Nice! Although it is not boss want from you, you\n'+
 					 						'successfully convince your boss to pay more money\n'+
 					 						'from the budget to a better security system. Your\n'+
@@ -230,6 +254,8 @@ class Event_10 extends Phaser.Scene
 				}
 				else 
 				{
+					this.wrong.play();
+					
 					this.add.text(240,200, 'OMG! You pay more money for data security but the\n'+
 					 						'service provider still gets hacked and this time\n'+
 					 						'part of your data is not recoverable.', {

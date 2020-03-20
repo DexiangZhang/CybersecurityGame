@@ -13,7 +13,8 @@ class MainMenu extends Phaser.Scene
 		//UI button for title screen
 		this.load.image("play", "assets/UI/PlayButton.png");
 		this.load.image("exit", "assets/UI/ExitButton.png");
-		this.load.image("setup", "assets/UI/MenuButton.png");
+
+    	this.load.audio('clickButton', 'assets/music/click.mp3');
 	}
 
 	create()
@@ -21,38 +22,41 @@ class MainMenu extends Phaser.Scene
 		this.image = this.add.tileSprite(0,0,config.width,config.height, "background_1");
 		this.image.setOrigin(0,0);
 
-		var title_Text = this.add.text(config.width/2-200,150, "Secure Your Data", {font: "50px Arial", fill: "white"});
+		this.click = this.sound.add("clickButton");
 
-		var setupBut = this.add.image(config.width/2-400,350,"setup");
-		setupBut.setOrigin(0,0);
-		setupBut.setScale(0.2);
+		var title_Text = this.add.text(config.width/2-220,150, "Secure Your Data", 
+		{
 
-		//event trigger when clck the image 
-		setupBut.setInteractive();
-		setupBut.on("pointerdown", function(pointer, gameObject)
-			{
-				this.scene.start("setting");
+			font: "50px Arial", fill: "white"
+		});
 
-			}, this);
+		title_Text.setStroke("#239Dff", 70);
+   	   	title_Text.setShadow(2, 2, "#ffffff", 2, true, true);
 
-		var playBut = this.add.image(config.width/2-50,350,"play");
+		var playBut = this.add.image(config.width/2-300,350,"play");
 		playBut.setOrigin(0,0);
 		playBut.setScale(0.2);
 
 		playBut.setInteractive();
 		playBut.on("pointerdown", function(pointer, gameObject)
 			{
+
+				this.click.play();
+
 				this.scene.start("generalization");
 
 			}, this);
 
-		var exitBut = this.add.image(config.width/2+300,350,"exit");
+		var exitBut = this.add.image(config.width/2+200,350,"exit");
 		exitBut.setOrigin(0,0);
 		exitBut.setScale(0.2);
 
 		exitBut.setInteractive();
 		exitBut.on("pointerdown", function(pointer, gameObject)
 			{
+
+				this.click.play();
+				
 				this.scene.start("over");
 
 			}, this);
@@ -69,7 +73,7 @@ class MainMenu extends Phaser.Scene
 		// money will be underfine casued it just jumping to the game scene
 		if(Phaser.Input.Keyboard.JustDown(this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.Q)))
 		{
-			this.scene.start("scene_12");
+			this.scene.start("ending");
 		}
 
 	}

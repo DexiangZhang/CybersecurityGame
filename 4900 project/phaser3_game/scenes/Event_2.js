@@ -40,6 +40,12 @@ class Event_2 extends Phaser.Scene
     	});
 
 
+    	this.load.audio('clickButton', 'assets/music/click.mp3');
+
+    	this.load.audio('correct_sound', 'assets/music/correct.mp3');
+
+    	this.load.audio('wrong_sound', 'assets/music/wrong.mp3');
+
 	}
 
 	create()
@@ -92,6 +98,14 @@ class Event_2 extends Phaser.Scene
 		});
 
 
+		this.click = this.sound.add("clickButton");
+
+		this.correct = this.sound.add("correct_sound");
+
+		this.wrong = this.sound.add("wrong_sound");
+
+
+
 		this.choice_1 = this.add.text(100, 450, 'Backup data Now', { 
 			font: "bold 30px Arial", 
 			fill: "white" 
@@ -108,8 +122,12 @@ class Event_2 extends Phaser.Scene
 				this.box = this.add.image(512,300,"eventBox");
 				this.box.setScale(0.6);
 
+				this.click.play();
+
 				if(this.hasCloudStorage == true)
 				{
+					this.correct.play();
+
 					this.add.text(240,200, 'Great! you saved you data, cloud storage is the \n only one that stores' + 
 						' multiple copies on multiple servers \n at a different location,' +
 						'so one stop working, data can be \nretrieved from another location', {
@@ -136,6 +154,9 @@ class Event_2 extends Phaser.Scene
 				}
 				else 
 				{
+
+					this.wrong.play();
+
 					this.add.text(240,200, 'Oops, your data backup gets destroyed by the earthquake, \nand since it is physically damaged' +
 						' you cannot \nretrieve any data from the device, \n you need to buy the device again', {
 
@@ -187,11 +208,16 @@ class Event_2 extends Phaser.Scene
 				this.box = this.add.image(512,300,"eventBox");
 				this.box.setScale(0.6);
 
+				this.click.play();
+
 				// gives number 0 or 1 randomly
 				var randomNum = Phaser.Math.Between(0, 1);
 
 				if(randomNum == 0)
 				{
+
+					this.correct.play();
+
 					this.add.text(240,200, 'Lucky you! an official governor has annouced\n ' +
 						'that it just a misstatement mistake. Nothing happened', {
 						
@@ -217,6 +243,9 @@ class Event_2 extends Phaser.Scene
 				}
 				else 
 				{
+
+					this.wrong.play();
+					
 					this.add.text(240,200, 'Oops, the ground starts shaking, and your \n' + 
 						'computer falls. You need to pay the price \n ' + ' for your choice', {
 
