@@ -1,10 +1,10 @@
 var event11 = "While you are working on your department, you get\n"+
-			  "a call from the boss saying that there is some\n"+
-			  "secure information in his computer, he wants you\n"+
+			  "a call from the boss saying that there are some\n"+
+			  "secure files in his computer. He wants you\n"+
 			  "to bring the data to his location as fast as\n"+
 			  "possible. He doesn’t want anyone in his company\n"+
-			  "to know and order you to bring out without catch\n"+
-			  "any attention. He only trusts you now.";
+			  "know and order you to bring it out without catch\n"+
+			  "any attention. He only trusts you.";
 	
 
 var bonus = 200;
@@ -50,7 +50,8 @@ class Event_11 extends Phaser.Scene
 
     	this.load.audio('wrong_sound', 'assets/music/wrong.mp3');
 
-
+    	this.load.image("money_icon", "assets/images/money.png");
+		this.load.image("events", "assets/images/event_text.png");
 	}
 
 	create()
@@ -77,18 +78,19 @@ class Event_11 extends Phaser.Scene
 		bossHidingAnimation.play("boss_hide_anim");
 
 
-		this.value = this.add.text(50,20, "$" + this.money, {
+		var dollar_icon = this.add.image(10,15,"money_icon");
+		dollar_icon.setOrigin(0,0);
+		dollar_icon.setScale(0.2);
+
+		this.value = this.add.text(70,20, this.money, {
 			font: "bold 40px Arial", 
 			fill: "white",
 
 		});
 
-
-		this.add.text(650,20, "Event", {
-			font: "bold 40px Arial", 
-			fill: "white",
-
-		});
+		var event = this.add.image(650,0,"events");
+		event.setOrigin(0,0);
+		event.setScale(0.2);
 
 		this.add.text(850,20, "November", {
 			font: "bold 30px Arial", 
@@ -133,11 +135,11 @@ class Event_11 extends Phaser.Scene
 
 					this.add.text(240,200, 'Well done! USB is the only option in this case.\n'+
 											'It doesn’t occupy much physical space and backup\n'+
-											'speed is good when you only store few data, you \n'+
+											'speed is good when you only has few data. You \n'+
 											'can easily bring it out to other places epically\n'+
 											'when you need to use it in other portal devices\n'+
 											'such as a computer. It is universal accept by \n'+
-											'people in such a case. ', {
+											'people in such case. ', {
 						
 						font: "bold 20px Arial", 
 						fill: "black",
@@ -229,7 +231,8 @@ class Event_11 extends Phaser.Scene
 					this.add.text(240,200, 'Boss feels a little disappointing to you but he \n'+
 											'understands it might be difficult for a new worker.\n'+
 											'He sends you a picture of what he looking for and \n'+
-											'tells you to use this item to transfer data to him. ', {
+											'tells you to borrow this item and then transfers\n'+ 
+											'data to him. ', {
 						
 							font: "bold 20px Arial", 
 							fill: "black",
@@ -258,7 +261,7 @@ class Event_11 extends Phaser.Scene
 					this.add.text(240,200, 'Boss is upset about your response and comes to the\n'+
 					 						'company to pick up data by himself. He thinks you\n'+
 					 						'are not doing a good job and deducted some money\n'+
-					 						'from your department.', {
+					 						'from your budget.', {
 
 							font: "bold 20px Arial", 
 							fill: "black", 

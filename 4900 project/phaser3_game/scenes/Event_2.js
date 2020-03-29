@@ -1,6 +1,7 @@
-var event2 = "This is the second month you are working here, \n everything seems working well. " +
-			"However, you heard \nfrom the interent about a forecast that there is going \nto be an earthquake in your area soon. " +
-			"Boss seems \nworried about his company data,  you think you should";
+var event2 = "This is your second month in this company, \n everything seems working well. " +
+			"However, you heard \nfrom the interent that there \n"+
+			"is going to be an earthquake in your area soon. \n" +
+			"Boss is worrying about his data, you should ";
 
 var bonus = 200;
 var defaultIncome = 500;
@@ -32,6 +33,9 @@ class Event_2 extends Phaser.Scene
 
 		this.load.image("eventBox", "assets/UI/event_result.png");
 		this.load.image("next", "assets/UI/continue.png");
+
+		this.load.image("money_icon", "assets/images/money.png");
+		this.load.image("events", "assets/images/event_text.png");
 
     	this.load.spritesheet("earthquake_pic", "assets/animation/earthquake.png",
     	{
@@ -72,18 +76,22 @@ class Event_2 extends Phaser.Scene
 		earthquakeAnimation.play("earthquake_anim");
 
 
-		this.value = this.add.text(50,20, "$" + this.money, {
+
+		var dollar_icon = this.add.image(10,15,"money_icon");
+		dollar_icon.setOrigin(0,0);
+		dollar_icon.setScale(0.2);
+
+		this.value = this.add.text(70,20, this.money, {
 			font: "bold 40px Arial", 
 			fill: "white",
 
 		});
 
+		var event = this.add.image(650,0,"events");
+		event.setOrigin(0,0);
+		event.setScale(0.2);
 
-		this.add.text(650,20, "Event", {
-			font: "bold 40px Arial", 
-			fill: "white",
 
-		});
 
 		this.add.text(890,20, "February", {
 			font: "bold 30px Arial", 
@@ -128,9 +136,10 @@ class Event_2 extends Phaser.Scene
 				{
 					this.correct.play();
 
-					this.add.text(240,200, 'Great! you saved you data, cloud storage is the \n only one that stores' + 
-						' multiple copies on multiple servers \n at a different location,' +
-						'so one stop working, data can be \nretrieved from another location', {
+					this.add.text(240,200, 'Great! you save you data, cloud storage is the \n only one that stores' + 
+						'multiple copies on multiple servers \n'+
+						'at the different locations. So if one of them is \n'+
+						'stop working, data can retrieve from other locations', {
 						
 						font: "bold 20px Arial", 
 						fill: "black",
@@ -157,7 +166,7 @@ class Event_2 extends Phaser.Scene
 
 					this.wrong.play();
 
-					this.add.text(240,200, 'Oops, your data backup gets destroyed by the earthquake, \nand since it is physically damaged' +
+					this.add.text(240,200, 'Oops, the backup data get destroyed by the earthquake, \nand since it is physically damaged' +
 						' you cannot \nretrieve any data from the device, \n you need to buy the device again', {
 
 							font: "bold 20px Arial", 
@@ -219,7 +228,7 @@ class Event_2 extends Phaser.Scene
 					this.correct.play();
 
 					this.add.text(240,200, 'Lucky you! an official governor has annouced\n ' +
-						'that it just a misstatement mistake. Nothing happened', {
+						'that it just a misstatement. Nothing would happen', {
 						
 							font: "bold 20px Arial", 
 							fill: "black",
@@ -246,8 +255,8 @@ class Event_2 extends Phaser.Scene
 
 					this.wrong.play();
 					
-					this.add.text(240,200, 'Oops, the ground starts shaking, and your \n' + 
-						'computer falls. You need to pay the price \n ' + ' for your choice', {
+					this.add.text(240,200, 'Oops, the ground is shaking, and your \n' + 
+						'computer is falling. You need to pay the price \n ' + ' for your choice you had made', {
 
 							font: "bold 20px Arial", 
 							fill: "black", 

@@ -35,6 +35,9 @@ class Event_1 extends Phaser.Scene
 		this.load.image("printer_storage", "assets/images/printer_storage.png");
 		this.load.image("USB_storage", "assets/images/USB_storage.png");
 
+		this.load.image("money_icon", "assets/images/money.png");
+		this.load.image("events", "assets/images/event_text.png");
+
     	this.load.spritesheet("backup_pic", "assets/animation/backup.png",
     	{
     		frameWidth: 300,
@@ -71,19 +74,19 @@ class Event_1 extends Phaser.Scene
 
 		backupAnimation.play("backup_anim");
 
+		var dollar_icon = this.add.image(10,15,"money_icon");
+		dollar_icon.setOrigin(0,0);
+		dollar_icon.setScale(0.2);
 
-		this.value = this.add.text(50,20, "$" + this.money, {
+		this.value = this.add.text(70,20, this.money, {
 			font: "bold 40px Arial", 
 			fill: "white",
 
 		});
 
-
-		this.add.text(650,20, "Event", {
-			font: "bold 40px Arial", 
-			fill: "white",
-
-		});
+		var event = this.add.image(650,0,"events");
+		event.setOrigin(0,0);
+		event.setScale(0.2);
 
 		this.add.text(900,20, "January", {
 			font: "bold 30px Arial", 
@@ -108,14 +111,14 @@ class Event_1 extends Phaser.Scene
 		this.cloud.setInteractive();
 		this.cloud.on("pointerover", () =>
 			{
-				this.value.setText("$" + this.money + " - $250 ");
+				this.value.setText(this.money + " - $250 ");
 				
 
 			}, this);
 
 		this.cloud.on("pointerout", () =>
 			{
-				this.value.setText("$" + this.money);
+				this.value.setText(this.money);
 				
 
 			}, this);
@@ -146,14 +149,14 @@ class Event_1 extends Phaser.Scene
 		this.internal.on("pointerover", () =>
 			{
 				
-				this.value.setText("$" + this.money + " - $200 ");
+				this.value.setText(this.money + " - $200 ");
 				
 
 			}, this);
 
 		this.internal.on("pointerout", () =>
 			{
-				this.value.setText("$" + this.money);
+				this.value.setText(this.money);
 				
 
 			}, this);
@@ -181,14 +184,14 @@ class Event_1 extends Phaser.Scene
 		this.printer.setInteractive();
 		this.printer.on("pointerover", () =>
 			{
-				this.value.setText("$" + this.money + " - $150 ");
+				this.value.setText(this.money + " - $150 ");
 				
 
 			}, this);
 
 		this.printer.on("pointerout", () =>
 			{
-				this.value.setText("$" + this.money);
+				this.value.setText(this.money);
 				
 
 			}, this);
@@ -216,14 +219,14 @@ class Event_1 extends Phaser.Scene
 		this.USB.setInteractive();
 		this.USB.on("pointerover", () =>
 			{
-				this.value.setText("$" + this.money + " - $100 ");
+				this.value.setText(this.money + " - $100 ");
 				
 
 			}, this);
 
 		this.USB.on("pointerout", () =>
 			{
-				this.value.setText("$" + this.money);
+				this.value.setText(this.money);
 				
 
 			}, this);

@@ -1,6 +1,7 @@
-var event3 = "Boss wants you to backup some universal file \ntype of important document because\n " +
-			"He hears that some hackers are going on \nright now to crack small business's\n " +
-			"data and sell them to its opponent. You decide to: ";
+var event3 = "Boss wants you to backup some universal file \ntype of important documents because\n " +
+			"He had heard that some hackers are going to \n"+
+			"crack small business's security and steal data\n"+ 
+			"and then sell them to their opponents. You decide to: ";
 	
 
 var bonus = 200;
@@ -45,6 +46,9 @@ class Event_3 extends Phaser.Scene
     	this.load.audio('correct_sound', 'assets/music/correct.mp3');
 
     	this.load.audio('wrong_sound', 'assets/music/wrong.mp3');
+
+    	this.load.image("money_icon", "assets/images/money.png");
+		this.load.image("events", "assets/images/event_text.png");
 	}
 
 	create()
@@ -71,18 +75,20 @@ class Event_3 extends Phaser.Scene
 		warningAnimation.play("hackingSign_anim");
 
 
-		this.value = this.add.text(50,20, "$" + this.money, {
+		var dollar_icon = this.add.image(10,15,"money_icon");
+		dollar_icon.setOrigin(0,0);
+		dollar_icon.setScale(0.2);
+
+		this.value = this.add.text(70,20, this.money, {
 			font: "bold 40px Arial", 
 			fill: "white",
 
 		});
 
+		var event = this.add.image(650,0,"events");
+		event.setOrigin(0,0);
+		event.setScale(0.2);
 
-		this.add.text(650,20, "Event", {
-			font: "bold 40px Arial", 
-			fill: "white",
-
-		});
 
 		this.add.text(900,20, "March", {
 			font: "bold 30px Arial", 
@@ -127,8 +133,8 @@ class Event_3 extends Phaser.Scene
 					this.correct.play();
 
 					this.add.text(240,200, 'Good job! In this situation, the printer backup is the \nonly ' +
-						'way to prevent data from being hacked. \nIt is nearly impossible for a hacker to ' +
-						'accessed data compare \nto another backup especially for universal file type', {
+						'way to prevent data from hacking. \nIt is nearly impossible for a hacker to ' +
+						'access data compare \nto other backups, especially for universal file type', {
 						
 						font: "bold 20px Arial", 
 						fill: "black",
@@ -154,9 +160,9 @@ class Event_3 extends Phaser.Scene
 				{
 					this.wrong.play();
 
-					this.add.text(240,200, 'Oops, Your backup method is useful and good in most \ncases for security' +
-						'However, unlucky this time your company \nfacing the professional hacker team' +
-						'Your backup got\n cracked and data being destroyed', {
+					this.add.text(240,200, 'Oops, Your backup method is useful and good in most \ncases for security purpose' +
+						'However, unlucky this time your\n company is facing the professional hacker' +
+						'Your backup \n get cracked and data being destroyed', {
 
 							font: "bold 20px Arial", 
 							fill: "black", 
@@ -217,8 +223,8 @@ class Event_3 extends Phaser.Scene
 					this.correct.play();
 
 					this.add.text(240,200, 'How lucky you are! since your opponent does not think\n ' +
-						'it is worth hiring a hacker to destroy especially the \nvulnerable business,' +
-						'but sadly on another side...', {
+						'your compnay is worth to hire a hacker to destroy,\n" +
+						'but sadly on another meaning...', {
 						
 							font: "bold 20px Arial", 
 							fill: "black",
@@ -245,7 +251,8 @@ class Event_3 extends Phaser.Scene
 					this.wrong.play();
 					
 					this.add.text(240,200, 'Oops, you know it, it is not going to be easy \n' + 
-						'to get rid of it. Your enemy wants your company to be \nkicked out from this market', {
+						'to get rid of it. Sorry sir, enemy wants your company\n"+ 
+						'to be kicked out from this market', {
 
 							font: "bold 20px Arial", 
 							fill: "black", 

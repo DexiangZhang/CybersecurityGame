@@ -1,10 +1,10 @@
-var event8 = "There is a new worker hired by the company and\n"+
-			 "become the second worker in your department.\n"+
-			 "However, one day he left for no reason,\n"+
-			 "and you find out your data got destroyed.\n"+
-			 "Boss finds out he is an enemy’s spy now and\n"+
-			 "gets angry. Boss asks you is there any way\n"+
-			 "to retrieve back data otherwise, the company\n"+
+var event8 = "There is a new worker hires by the company and\n"+
+			 "becomes the second worker in your department.\n"+
+			 "However, one day he left out for no reason,\n"+
+			 "and you find out your data get destroyed.\n"+
+			 "Boss finds out he is an enemy’s spy and\n"+
+			 "gets angry. Boss asks you to see if the data\n"+
+			 "can be retrieve back. Otherwise, the company\n"+
 			 "would be in a potential risk in the future.";
 			
 	
@@ -47,6 +47,9 @@ class Event_8 extends Phaser.Scene
     	this.load.audio('correct_sound', 'assets/music/correct.mp3');
 
     	this.load.audio('wrong_sound', 'assets/music/wrong.mp3');
+
+    	this.load.image("money_icon", "assets/images/money.png");
+		this.load.image("events", "assets/images/event_text.png");
 	}
 
 	create()
@@ -64,18 +67,19 @@ class Event_8 extends Phaser.Scene
 		spyImage.setScale(0.4);
 
 
-		this.value = this.add.text(50,20, "$" + this.money, {
+		var dollar_icon = this.add.image(10,15,"money_icon");
+		dollar_icon.setOrigin(0,0);
+		dollar_icon.setScale(0.2);
+
+		this.value = this.add.text(70,20, this.money, {
 			font: "bold 40px Arial", 
 			fill: "white",
 
 		});
 
-
-		this.add.text(650,20, "Event", {
-			font: "bold 40px Arial", 
-			fill: "white",
-
-		});
+		var event = this.add.image(650,0,"events");
+		event.setOrigin(0,0);
+		event.setScale(0.2);
 
 		this.add.text(900,20, "Auguest", {
 			font: "bold 30px Arial", 
@@ -118,10 +122,10 @@ class Event_8 extends Phaser.Scene
 				{
 					this.correct.play();
 
-					this.add.text(240,200, 'Lucky you, you bought the cloud plan before. You can\n'+
-										   'get your old data back because you just need the\n'+
-										   'internet to redownload your previous backup plan. The\n'+
-										   'data is store in the “cloud” or fully online, physical\n'+
+					this.add.text(240,200, 'Lucky you, becasue of the cloud plan that you bought\n'+ 
+										   'before. You can get old data back because for this\n'+
+										   'plan you just need the internet to redownload data\n'+
+										   'The data is stored in the “cloud”, physical\n'+
 										   'damage to your computer won’t affect your data. You\n'+
 										   'can retrieve it in any device at any time. ', {
 						
@@ -151,8 +155,8 @@ class Event_8 extends Phaser.Scene
 
 					this.add.text(240,200, 'Mhmmm, are you sure you can backup data again?\n'+
 										   'Don’t you see all the devices are damaged? If\n'+
-										   'you didn’t back up data online or in someplace\n'+
-										   'else,  you have no way to get data back again.', {
+										   'you do not back up data online or in someplace\n'+
+										   'else, you have no way to get data back again.', {
 
 							font: "bold 20px Arial", 
 							fill: "black", 
@@ -211,11 +215,11 @@ class Event_8 extends Phaser.Scene
 				{
 					this.correct.play();
 
-					this.add.text(240,200, 'You find out the spy with evidence that shows he is\n'+
-										   'the enemy’s company worker. Your company and that\n'+
-										   'company go to court for this case. Court decides they\n'+
-										   'are guilty and you discover they backup your company’s\n'+
-										   'data personally. ', {
+					this.add.text(240,200, 'You find out with evidence that shows the spy is\n'+
+										   'the enemy’s worker. Both of companies go to court\n'+
+										   'and court decides that your enemy is guilty. \n'+
+										   'You discover that they backup your company’s\n'+
+										   'data personally and tell them to return back. ', {
 						
 							font: "bold 20px Arial", 
 							fill: "black",
@@ -242,8 +246,8 @@ class Event_8 extends Phaser.Scene
 					this.wrong.play();
 					
 					this.add.text(240,200, 'Your company is in the depression for backup data\n'+
-										   'loss for one month. some money that is lost in this\n'+
-										   'time is deducted from your department’s budget', {
+										   'loss for one month. The money company lost this\n'+
+										   'is deducted from your department’s budget', {
 
 							font: "bold 20px Arial", 
 							fill: "black", 

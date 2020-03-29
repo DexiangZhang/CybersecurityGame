@@ -1,11 +1,12 @@
 var textSentence_1 = [
 
-			"Hi, welcome to Tech Inc. \n I have waiting for you \nfor long time!",
-			"I don't want to talk too  \n much, let me give you \nwhat you need to do in \nmy compnay",
-			"Your goal is to protect our \ndata from being lose, \nand get at least \n$3000 at the end of year",
-			"I give you $1000 for start,\n don't disappoint me..\notherwise, you will know \nwhat would happen",
-			"HAHAHAHAH..."
-
+			"Hi, welcome to Tech Inc.  I’ve been waiting for \n" +
+			"you for a long time! I don't like to talk too much.\n"+
+			"Let’s go straight to the topic. You are responsible\n"+
+			"for our data backup team and get at least $3000 at \n"+
+			"the end of the year. I give you $1000 for the\n"+
+			"beginning, don't make me disappoint. Otherwise,\n"+
+			"you know what is going to happen to you. HAHAHA...";
 		];
 
 var index =0;

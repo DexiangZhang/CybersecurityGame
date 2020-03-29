@@ -1,12 +1,12 @@
 var event10 = "One day, You get an email from your service\n"+
-			  "providers of backup data about the recent \n"+
-			  "news that dropbox, one drive, and google\n"+
-			  "drive get hacked by some unknown users.They\n"+
-			  "recover immediately, everyone data is recovered.\n"+
+			  "providers about the recent news that dropbox,\n"+ 
+			  "one drive, and google drive get hacked by some\n"+
+			  "unknown users.Although providers recover \n"+
+			  "immediately, everyone's data is recovered.\n"+
 			  "However, your boss is concern it will happen again\n"+
-			  "because It is huge files. Boss wonders if you can do\n"+
-			  "backup again but this time he wants to keep them\n"+
-			  "in the company for a long period. ";
+			  "because the company has huge files in their system.\n"+
+			  "Boss wonders if you can do backup again for \n"+
+			  "a long period. ";
 	
 
 var bonus = 200;
@@ -52,7 +52,8 @@ class Event_10 extends Phaser.Scene
 
     	this.load.audio('wrong_sound', 'assets/music/wrong.mp3');
 
-
+    	this.load.image("money_icon", "assets/images/money.png");
+		this.load.image("events", "assets/images/event_text.png");
 	}
 
 	create()
@@ -79,18 +80,19 @@ class Event_10 extends Phaser.Scene
 		serverHackedAnimation.play("hack_server_anim");
 
 
-		this.value = this.add.text(50,20, "$" + this.money, {
+		var dollar_icon = this.add.image(10,15,"money_icon");
+		dollar_icon.setOrigin(0,0);
+		dollar_icon.setScale(0.2);
+
+		this.value = this.add.text(70,20, this.money, {
 			font: "bold 40px Arial", 
 			fill: "white",
 
 		});
 
-
-		this.add.text(650,20, "Event", {
-			font: "bold 40px Arial", 
-			fill: "white",
-
-		});
+		var event = this.add.image(650,0,"events");
+		event.setOrigin(0,0);
+		event.setScale(0.2);
 
 		this.add.text(900,20, "October", {
 			font: "bold 30px Arial", 
@@ -136,9 +138,9 @@ class Event_10 extends Phaser.Scene
 
 					this.add.text(240,200, 'Good job! Boss likes your plan. Internal/external\n'+
 										   'device is the one he looking for. It has a very \n'+
-										   'good price that can store a huge file for a very\n'+
-										   'long period. Boss can backup multiple time in case\n'+
-										   'one get damaged.', {
+										   'good price and it can store a huge file for a \n'+
+										   'long period time. Now boss can backup multiple \n'+
+										   'time in case one get damaged.', {
 						
 						font: "bold 20px Arial", 
 						fill: "black",
@@ -166,8 +168,8 @@ class Event_10 extends Phaser.Scene
 
 					this.add.text(240,200, 'No! You’re wrong. This is not what he looking for.\n'+
 					 					   'There must have a better one than the one you owned.\n'+
-					 					   'It is either a large space or not last very long but\n'+
-					 					   'not both', {
+					 					   'The plan you owned is either has a large space or \n'+
+					 					   'short lifetime but not both.', {
 
 							font: "bold 20px Arial", 
 							fill: "black", 
@@ -227,10 +229,10 @@ class Event_10 extends Phaser.Scene
 
 					this.correct.play();
 
-					this.add.text(240,200, 'Nice! Although it is not boss want from you, you\n'+
+					this.add.text(240,200, 'Nice! Although it is not the one that boss needs, you\n'+
 					 						'successfully convince your boss to pay more money\n'+
-					 						'from the budget to a better security system. Your\n'+
-					 						'boss feels safer about his company’s information ', {
+					 						'from the budget for a better security system. Your\n'+
+					 						'boss feels safer about his company’s information now', {
 						
 							font: "bold 20px Arial", 
 							fill: "black",
@@ -256,9 +258,9 @@ class Event_10 extends Phaser.Scene
 				{
 					this.wrong.play();
 					
-					this.add.text(240,200, 'OMG! You pay more money for data security but the\n'+
-					 						'service provider still gets hacked and this time\n'+
-					 						'part of your data is not recoverable.', {
+					this.add.text(240,200, 'OMG! You waste your money to pay the data security\n'+
+					 						'The system still gets hacked and this time\n'+
+					 						'some part of your data is lost and not recoverable.', {
 
 							font: "bold 20px Arial", 
 							fill: "black", 

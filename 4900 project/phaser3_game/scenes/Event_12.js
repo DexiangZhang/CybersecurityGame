@@ -1,10 +1,10 @@
 var event12 = "While you are watching material online, you\n"+
- 			  "accidentally click the virus website that seems\n"+
- 			  "what you looking for and the computer gets virus\n"+
- 			  "because of that. After your computer being infected,\n"+
- 			  "the hacker tells you to pay the money to recover the\n"+
- 			  "data from the computer. Everything is blocked and you\n"+
- 			  "need to  make choice right now";
+ 			  "accidentally click the website that contains\n"+
+ 			  "the virus and suddenly the computer gets virus\n"+
+ 			  "After your computer being infected, the hacker \n"+
+ 			  "tells you to pay the money in order to recover \n"+
+ 			  "data. Everything is blocked and you need to\n"+
+ 			  "make a choice right now";
 	
 
 var bonus = 200;
@@ -50,7 +50,8 @@ class Event_12 extends Phaser.Scene
 
     	this.load.audio('wrong_sound', 'assets/music/wrong.mp3');
 
-
+    	this.load.image("money_icon", "assets/images/money.png");
+		this.load.image("events", "assets/images/event_text.png");
 
 	}
 
@@ -78,18 +79,19 @@ class Event_12 extends Phaser.Scene
 		virusAnimation.play("got_virus_anim");
 
 
-		this.value = this.add.text(50,20, "$" + this.money, {
+		var dollar_icon = this.add.image(10,15,"money_icon");
+		dollar_icon.setOrigin(0,0);
+		dollar_icon.setScale(0.2);
+
+		this.value = this.add.text(70,20, this.money, {
 			font: "bold 40px Arial", 
 			fill: "white",
 
 		});
 
-
-		this.add.text(650,20, "Event", {
-			font: "bold 40px Arial", 
-			fill: "white",
-
-		});
+		var event = this.add.image(650,0,"events");
+		event.setOrigin(0,0);
+		event.setScale(0.2);
 
 		this.add.text(850,20, "December", {
 			font: "bold 30px Arial", 
@@ -133,8 +135,8 @@ class Event_12 extends Phaser.Scene
 				{
 					this.correct.play();
 
-					this.add.text(240,200, 'Nice! You made a good choice. Since you do have\n'+
-					 						'external or cloud backup. It allows you to restore\n'+
+					this.add.text(240,200, 'Nice! You make a good choice. Since you do have\n'+
+					 						'external backup. It allows you to restore\n'+
 					 						'the huge data on another computer. The external plan\n'+
 					 						'is the best way in this case because it does not\n'+
 					 						'depend on the internet.', {
@@ -165,8 +167,9 @@ class Event_12 extends Phaser.Scene
 
 					this.add.text(240,200, 'NO! the plan you have so far none of them are\n'+
 					 						'compatible to use right now. You should think\n'+
-					 						'about it if it happening in the real world. It\n'+
-					 						'might happen', {
+					 						'about it. It might happen in the real life', 
+					 	{
+					 						
 
 							font: "bold 20px Arial", 
 							fill: "black", 
@@ -225,10 +228,10 @@ class Event_12 extends Phaser.Scene
 				{
 					this.correct.play();
 
-					this.add.text(240,200, 'Nice done! You use your intelligence successfully\n'+
-					 						'make hacker spend more time on you and then allows\n'+
-					 					 	'the security department to trace back to their real\n'+
-					 					 	'address and make them recover for you.', {
+					this.add.text(240,200, 'Nicely done! You use your intelligence successfully\n'+
+					 						'to make hacker spends more time on you and then allows\n'+
+					 					 	'the security department to trace back his real\n'+
+					 					 	'address and force him to recover for you.', {
 						
 							font: "bold 20px Arial", 
 							fill: "black",
@@ -255,8 +258,8 @@ class Event_12 extends Phaser.Scene
 					this.wrong.play();
 					
 					this.add.text(240,200, 'The mission fails, it seems like the hacker has\n'+
-					 						'better intelligence than you. He doesn’t fall to\n'+
-					 						'your trap. You pay out some money to hackers for\n'+ 
+					 						'better intelligence than you. He doesn’t fall into\n'+
+					 						'your trap. You pay out some money to hacker for\n'+ 
 					 						'unlocking the computer. ', {
 
 							font: "bold 20px Arial", 

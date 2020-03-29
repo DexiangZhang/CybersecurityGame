@@ -1,7 +1,7 @@
 var event7 = "This month, there is a huge meeting for each boss\n"+
 			 "who opened a business in this city. Your boss wants\n"+
 			 "to bring his data such as image, audio, and important\n"+
-			 "document with him this time. He says it is not large \n"+
+			 "documents with him this time. He says it is not large \n"+
 			 "data overall but he needs to show in another person’s\n"+
 			 "computer.";
 	
@@ -44,6 +44,9 @@ class Event_7 extends Phaser.Scene
     	this.load.audio('correct_sound', 'assets/music/correct.mp3');
 
     	this.load.audio('wrong_sound', 'assets/music/wrong.mp3');
+
+    	this.load.image("money_icon", "assets/images/money.png");
+		this.load.image("events", "assets/images/event_text.png");
 	}
 
 	create()
@@ -61,18 +64,19 @@ class Event_7 extends Phaser.Scene
 		thinkingImage.setScale(0.2);
 
 
-		this.value = this.add.text(50,20, "$" + this.money, {
+		var dollar_icon = this.add.image(10,15,"money_icon");
+		dollar_icon.setOrigin(0,0);
+		dollar_icon.setScale(0.2);
+
+		this.value = this.add.text(70,20, this.money, {
 			font: "bold 40px Arial", 
 			fill: "white",
 
 		});
 
-
-		this.add.text(650,20, "Event", {
-			font: "bold 40px Arial", 
-			fill: "white",
-
-		});
+		var event = this.add.image(650,0,"events");
+		event.setOrigin(0,0);
+		event.setScale(0.2);
 
 		this.add.text(900,20, "July", {
 			font: "bold 30px Arial", 
@@ -118,11 +122,11 @@ class Event_7 extends Phaser.Scene
 
 					this.correct.play();
 
-					this.add.text(240,200, 'Nice! Boss very happy about that. The USB storage\n'+
+					this.add.text(240,200, 'Nice! Boss is very happy about that. The USB storage\n'+
 										   'is the most convenient portal device for transferring\n'+
-										   'the small data and the smallest device to bring out\n'+
-										   'when people go outside since it doesn’t occupy huge\n'+
-										   'physical space for that. ', {
+										   'the small data. It is also the smallest device \n'+
+										   'to bring out when people go outside since it doesn’t \n'+
+										   'occupy huge physical space.', {
 						
 						font: "bold 20px Arial", 
 						fill: "black",
@@ -148,10 +152,10 @@ class Event_7 extends Phaser.Scene
 				{
 					this.wrong.play();
 
-					this.add.text(240,200, 'Oh-no… It is not very convenient for the boss to\n'+
+					this.add.text(240,200, 'Oh-no…It is not very convenient for the boss to\n'+
 										   'use your plan in this situation. I mean this is not\n'+
 										   'a very big file why you bother to tell your boss to\n'+ 
-										   'use such a method, there may be a better way right.', {
+										   'use such a method, there may be a better way, right?', {
 
 							font: "bold 20px Arial", 
 							fill: "black", 
@@ -213,7 +217,7 @@ class Event_7 extends Phaser.Scene
 
 					this.add.text(240,200, 'You’re lucky, boss forgives you this time because\n'+
 										   'other companies allow online transfer data to their\n'+
-										   'computer for this time.', {
+										   'computers for this time.', {
 						
 							font: "bold 20px Arial", 
 							fill: "black",
@@ -241,8 +245,8 @@ class Event_7 extends Phaser.Scene
 					this.wrong.play();
 					
 					this.add.text(240,200, 'Boss’s meeting gets deny because of your unsuccessful\n'+
-										   'play. He cannot go to a meeting without the information\n'+
-										   'shared to other company', {
+										   'play. He cannot go to the meeting without the information\n'+
+										   'share to other companies', {
 
 							font: "bold 20px Arial", 
 							fill: "black", 
