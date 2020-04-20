@@ -1,5 +1,6 @@
 # CybersecurityGame
-Data_Backup
+Data_Backup 
+  - It is a simple game that teach you how to use each data backup plan wisely depend on the circumstances you might face in the real life.  
 
 WIN
 ---------
