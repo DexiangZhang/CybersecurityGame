@@ -1,12 +1,12 @@
 var textSentence_1 = [
 
-			"Hi, welcome to Tech Inc.  I’ve been waiting for \n" +
-			"you for a long time! I don't like to talk too much.\n"+
-			"Let’s go straight to the topic. You are responsible\n"+
-			"for our data backup team and get at least $3000 at \n"+
-			"the end of the year. I give you $1000 for the\n"+
-			"beginning, don't make me disappoint. Otherwise,\n"+
-			"you know what is going to happen to you. HAHAHA...";
+			"Hi, welcome to Tech Inc.  \n I’ve been waiting for \n" +
+			"you for a long time! I \n don't like to talk too much.\n",
+			"Let’s go straight to the topic. \n You are responsible"+
+			"for our \n data backup team and get \n at least $3000 at ",
+			"the end of the year. I give \n you $1000 for the "+
+			"\n beginning. Don't make me \n disappoint. Otherwise,",
+			"you know what is going to \n happen to you. HAHAHA..."
 		];
 
 var index =0;

@@ -223,7 +223,7 @@ class Event_3 extends Phaser.Scene
 					this.correct.play();
 
 					this.add.text(240,200, 'How lucky you are! since your opponent does not think\n ' +
-						'your compnay is worth to hire a hacker to destroy,\n" +
+						'your compnay is worth to hire a hacker to destroy,\n' +
 						'but sadly on another meaning...', {
 						
 							font: "bold 20px Arial", 
@@ -251,7 +251,7 @@ class Event_3 extends Phaser.Scene
 					this.wrong.play();
 					
 					this.add.text(240,200, 'Oops, you know it, it is not going to be easy \n' + 
-						'to get rid of it. Sorry sir, enemy wants your company\n"+ 
+						'to get rid of it. Sorry sir, enemy wants your company\n'+ 
 						'to be kicked out from this market', {
 
 							font: "bold 20px Arial", 

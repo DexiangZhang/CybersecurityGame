@@ -1,6 +1,6 @@
 var event6 = "Boss brings his kid to the company this month. \n" +
 			 "While you are working, his kid brings a water bottle\n"+
-			 "and walks pass you. Accidentally he falls off the\n"+\
+			 "and walks pass you. Accidentally he falls off the\n"+
 			 "ground. The water spills out into your computer \n" +
 			 "and then it shuts down. You need to retrieve \n"+
 			 "back the data!";
