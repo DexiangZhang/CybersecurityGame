@@ -1,3 +1,8 @@
+*Warning
+---------------------
+When open the game in a browser, please have a server ready to open due to phaser issue. Otherwise the image, anmiation or some UI will not show properly. (If you using chrome broswer, you can download  "web server for chrome" in chrome's store and use it to open my webpage)
+
+
 # CybersecurityGame
 Data_Backup 
   - It is a simple game that teach you how to use each data backup plan wisely depend on the circumstances you might face in the real life.  
