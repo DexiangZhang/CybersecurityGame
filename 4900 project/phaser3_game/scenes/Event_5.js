@@ -1,8 +1,9 @@
-var event5 = "You almost working on this company for a half year.\n" +
-			 "You can buy a new plan for your company now.\n " +
-			 "Please choose wisely for the second plan.\n " +
-			 "It will help you a lot for the next few months.";  
+var event5 = 
 
+			 "You have been working at this company for almost \n"+
+			 "half a year now. You can buy a new plan for your \n"+
+			 "company now. Please choose wisely for the second \n"+
+			 "plan. It will help you a lot for the next few months.";
 
 class Event_5 extends Phaser.Scene
 {

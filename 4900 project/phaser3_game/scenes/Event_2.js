@@ -1,7 +1,10 @@
-var event2 = "This is your second month in this company, \n everything seems working well. " +
-			"However, you heard \nfrom the interent that there \n"+
-			"is going to be an earthquake in your area soon. \n" +
-			"Boss is worrying about his data, you should ";
+var event2 =
+			"This is the second month you are working here.\n"+
+			"Everything seems to be working well. However, you \n"+
+			"heard from the Internet that there is going to be \n"+
+			"an earthquake in your area soon. Your boss is \n"+
+			"worrying about his data. You should";
+
 
 var bonus = 200;
 var defaultIncome = 500;
@@ -136,10 +139,11 @@ class Event_2 extends Phaser.Scene
 				{
 					this.correct.play();
 
-					this.add.text(240,200, 'Great! you save you data, cloud storage is the \n only one that stores' + 
-						'multiple copies on multiple servers \n'+
-						'at the different locations. So if one of them is \n'+
-						'stop working, data can retrieve from other locations', {
+					this.add.text(240,200, "Great! You saved your data. Cloud storage is the only\n" +
+										   "one that stores multiple copies on multiple servers at\n" +
+										   "the different locations. So if one of them stops working,\n"+
+										   "data can be retrieved from other locations.", 
+						{
 						
 						font: "bold 20px Arial", 
 						fill: "black",
@@ -166,8 +170,12 @@ class Event_2 extends Phaser.Scene
 
 					this.wrong.play();
 
-					this.add.text(240,200, 'Oops, the backup data get destroyed by the earthquake, \nand since it is physically damaged' +
-						' you cannot \nretrieve any data from the device, \n you need to buy the device again', {
+					this.add.text(240,200, "Oops, your data backup gets destroyed by the earthquake,\n"+
+					 					   "and since it is physically damaged you cannot retrieve \n"+
+					 					   "any data from the device. You need to buy the device \n"+
+					 					   "again, but there is no way to compensate for the years\n"+
+					 					   "of data that are now lost forever.", 
+					 	{
 
 							font: "bold 20px Arial", 
 							fill: "black", 
@@ -227,8 +235,10 @@ class Event_2 extends Phaser.Scene
 
 					this.correct.play();
 
-					this.add.text(240,200, 'Lucky you! an official governor has annouced\n ' +
-						'that it just a misstatement. Nothing would happen', {
+					this.add.text(240,200, "Lucky you! A government official has announced that it \n"+
+					 					   "was just a mistaken prediction. Nothing will happen to \n"+
+					 					   "your data. Phew!", 
+					 	{
 						
 							font: "bold 20px Arial", 
 							fill: "black",
@@ -255,8 +265,10 @@ class Event_2 extends Phaser.Scene
 
 					this.wrong.play();
 					
-					this.add.text(240,200, 'Oops, the ground is shaking, and your \n' + 
-						'computer is falling. You need to pay the price \n ' + ' for your choice you had made', {
+					this.add.text(240,200, "Oops, the ground starts shaking, and your computer is \n"+
+										   "falling. You will pay the price for the choice that you\n"+
+										   "made.",
+						{
 
 							font: "bold 20px Arial", 
 							fill: "black", 

@@ -1,10 +1,12 @@
-var event7 = "This month, there is a huge meeting for each boss\n"+
-			 "who opened a business in this city. Your boss wants\n"+
-			 "to bring his data such as image, audio, and important\n"+
-			 "documents with him this time. He says it is not large \n"+
-			 "data overall but he needs to show in another person’s\n"+
-			 "computer.";
-	
+var event7 = 
+			
+			"This month, there is a huge meeting for each\n"+
+			"entrepreneur who opened a business in this city.\n"+
+			"Your boss wants to bring his important documents \n"+
+			"with him, including image, audio and video files. \n"+
+			"He says it is not a large amount of data but he \n"+
+			"needs to be able to access it on another person’s\n"+
+			"computer.";
 
 var bonus = 200;
 var defaultIncome = 500;
@@ -122,11 +124,10 @@ class Event_7 extends Phaser.Scene
 
 					this.correct.play();
 
-					this.add.text(240,200, 'Nice! Boss is very happy about that. The USB storage\n'+
-										   'is the most convenient portal device for transferring\n'+
-										   'the small data. It is also the smallest device \n'+
-										   'to bring out when people go outside since it doesn’t \n'+
-										   'occupy huge physical space.', {
+					this.add.text(240,200, "Nice! Your boss is very happy about that choice. The USB \n"+
+					 					   "storage is the most convenient portable device for\n"+
+					 					   "transferring small amounts of data. It is easy to bring \n"+
+					 					   "along since it is so small.", {
 						
 						font: "bold 20px Arial", 
 						fill: "black",
@@ -152,10 +153,10 @@ class Event_7 extends Phaser.Scene
 				{
 					this.wrong.play();
 
-					this.add.text(240,200, 'Oh-no…It is not very convenient for the boss to\n'+
-										   'use your plan in this situation. I mean this is not\n'+
-										   'a very big file why you bother to tell your boss to\n'+ 
-										   'use such a method, there may be a better way, right?', {
+					this.add.text(240,200, "Oh no… It is not very convenient for the boss to use \n"+
+					 					   "your plan in this situation. I mean this is not a very \n"+
+					 					   "big file. Why did you bother to suggest it to your boss? \n"+
+					 					   "Is there a better way?", {
 
 							font: "bold 20px Arial", 
 							fill: "black", 
@@ -215,9 +216,9 @@ class Event_7 extends Phaser.Scene
 
 					this.correct.play();
 
-					this.add.text(240,200, 'You’re lucky, boss forgives you this time because\n'+
-										   'other companies allow online transfer data to their\n'+
-										   'computers for this time.', {
+					this.add.text(240,200, "You’re lucky, your boss forgives you this time because \n"+
+					 					   "other companies allow online data transfer to their \n"+
+					 					   "computer this time.", {
 						
 							font: "bold 20px Arial", 
 							fill: "black",
@@ -244,9 +245,9 @@ class Event_7 extends Phaser.Scene
 
 					this.wrong.play();
 					
-					this.add.text(240,200, 'Boss’s meeting gets deny because of your unsuccessful\n'+
-										   'play. He cannot go to the meeting without the information\n'+
-										   'share to other companies', {
+					this.add.text(240,200, "Boss’s meeting gets denied because of your unsuccessful\n"+
+					 					   "play. He cannot go to the meeting without the information \n"+
+					 					   "to share to other companies.", {
 
 							font: "bold 20px Arial", 
 							fill: "black", 

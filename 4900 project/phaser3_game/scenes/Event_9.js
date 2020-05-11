@@ -1,9 +1,10 @@
-var event9 = "You have three more months before end of year.\n" +
-			 "You can buy a new plan for your company now.\n " +
-			 "Please choose wisely for the third plan.\n " +
-			 "It will help you a lot for the last three months.";  
+var event9 = 
 
-
+			 "You have three more months before the end of the\n"+
+			 "year. You can buy a new plan for your company now.\n"+
+			 "Please choose wisely for the third plan. It will \n"+
+			 "help you a lot for the last three months.";
+			 
 class Event_9 extends Phaser.Scene
 {
 

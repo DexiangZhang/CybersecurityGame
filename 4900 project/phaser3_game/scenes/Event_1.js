@@ -1,6 +1,11 @@
-var event1 = "Since it is a new company, there is only yourself \n in this department. " +
-			"Before starting, please choose \n one of the following to backup compnay data." +
-			" \nYour decision might impact the rest of the month, \n so please choose wisely";
+var event1 =
+			"Since it is a new company, you are the only one in \n"+
+			"this department. Before starting, please choose one \n"+
+			"of the following to backup company data. Your \n"+
+			"decision might impact the rest of the month, so \n"+
+			"please choose wisely.";
+
+
 
 
 class Event_1 extends Phaser.Scene

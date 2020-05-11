@@ -1,8 +1,9 @@
-var event3 = "Boss wants you to backup some universal file \ntype of important documents because\n " +
-			"He had heard that some hackers are going to \n"+
-			"crack small business's security and steal data\n"+ 
-			"and then sell them to their opponents. You decide to: ";
+var event3 = 
 	
+			"Boss wants you to backup an important document. \n"+
+			"He heard that some hackers are going to crack \n"+
+			"small business' security and steal data and then \n"+
+			"sell the data to their opponents. You decide to:";
 
 var bonus = 200;
 var defaultIncome = 500;
@@ -132,9 +133,12 @@ class Event_3 extends Phaser.Scene
 
 					this.correct.play();
 
-					this.add.text(240,200, 'Good job! In this situation, the printer backup is the \nonly ' +
-						'way to prevent data from hacking. \nIt is nearly impossible for a hacker to ' +
-						'access data compare \nto other backups, especially for universal file type', {
+					this.add.text(240,200, "Good job! In this situation, the printer backup is the \n"+
+										   "only way to prevent data from hacking. It is nearly \n"+
+										   "impossible for a hacker to access data stored on a \n"+
+										   "printer compared to other backup options, especially \n"+
+										   "for universal file type.", 
+						{
 						
 						font: "bold 20px Arial", 
 						fill: "black",
@@ -160,9 +164,11 @@ class Event_3 extends Phaser.Scene
 				{
 					this.wrong.play();
 
-					this.add.text(240,200, 'Oops, Your backup method is useful and good in most \ncases for security purpose' +
-						'However, unlucky this time your\n company is facing the professional hacker' +
-						'Your backup \n get cracked and data being destroyed', {
+					this.add.text(240,200, "Oops, Your backup method is useful and good in most\n"+
+										   "cases for security. However, it was unlucky this time \n"+
+										   "when your company faced the professional hacker. Your \n"+
+										   "backup was cracked and data was sold.", 
+						{
 
 							font: "bold 20px Arial", 
 							fill: "black", 
@@ -222,9 +228,10 @@ class Event_3 extends Phaser.Scene
 
 					this.correct.play();
 
-					this.add.text(240,200, 'How lucky you are! since your opponent does not think\n ' +
-						'your compnay is worth to hire a hacker to destroy,\n' +
-						'but sadly on another meaning...', {
+					this.add.text(240,200, "You got lucky! Your opponent does not think your company\n"+
+					 					   "is worth hiring a hacker to destroy it. He doesn’t \n"+
+					 					   "consider you as a rival because you are puny and \n"+
+					 					   "worthless.", {
 						
 							font: "bold 20px Arial", 
 							fill: "black",
@@ -250,9 +257,9 @@ class Event_3 extends Phaser.Scene
 				{
 					this.wrong.play();
 					
-					this.add.text(240,200, 'Oops, you know it, it is not going to be easy \n' + 
-						'to get rid of it. Sorry sir, enemy wants your company\n'+ 
-						'to be kicked out from this market', {
+					this.add.text(240,200, "Oops, you know it, it is not going to be easy to get \n"+
+					 					   "rid of the hackers. Sorry, your enemy wants your company\n"+
+					 					   "to be kicked out from this market.", {
 
 							font: "bold 20px Arial", 
 							fill: "black", 

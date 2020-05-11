@@ -1,11 +1,11 @@
-var event12 = "While you are watching material online, you\n"+
- 			  "accidentally click the website that contains\n"+
- 			  "the virus and suddenly the computer gets virus\n"+
- 			  "After your computer being infected, the hacker \n"+
- 			  "tells you to pay the money in order to recover \n"+
- 			  "data. Everything is blocked and you need to\n"+
- 			  "make a choice right now";
+var event12 = 
 	
+ 			  "While you are watching material online, you \n"+
+ 			  "accidentally click on a website that contains a \n"+
+ 			  "virus and infect your computer. The hacker tells \n"+
+ 			  "you to pay money in order to recover the data. \n"+
+ 			  "Everything is blocked and you need to make a \n"+
+ 			  "choice right now.";
 
 var bonus = 200;
 var defaultIncome = 500;
@@ -135,11 +135,10 @@ class Event_12 extends Phaser.Scene
 				{
 					this.correct.play();
 
-					this.add.text(240,200, 'Nice! You make a good choice. Since you do have\n'+
-					 						'external backup. It allows you to restore\n'+
-					 						'the huge data on another computer. The external plan\n'+
-					 						'is the best way in this case because it does not\n'+
-					 						'depend on the internet.', {
+					this.add.text(240,200, "Nice! You made a good choice. Since you do have external\n"+
+										   "backup, it allows you to restore the data on another \n"+
+										   "computer. The external plan is the best way in this case\n"+
+										   "because it does not depend on the Internet.", {
 						
 						font: "bold 20px Arial", 
 						fill: "black",
@@ -165,9 +164,9 @@ class Event_12 extends Phaser.Scene
 				{
 					this.wrong.play();
 
-					this.add.text(240,200, 'NO! the plan you have so far none of them are\n'+
-					 						'compatible to use right now. You should think\n'+
-					 						'about it. It might happen in the real life', 
+					this.add.text(240,200, "NO! Of the plans you have so far, none are compatible \n"+
+										   "with your situation now. You should have planned better \n"+
+										   "and thought of the different eventualities.", 
 					 	{
 					 						
 
@@ -228,10 +227,8 @@ class Event_12 extends Phaser.Scene
 				{
 					this.correct.play();
 
-					this.add.text(240,200, 'Nicely done! You use your intelligence successfully\n'+
-					 						'to make hacker spends more time on you and then allows\n'+
-					 					 	'the security department to trace back his real\n'+
-					 					 	'address and force him to recover for you.', {
+					this.add.text(240,200, "Nicely done! You figured out the identity of the hacker!\n"+
+					 					   "Now you can recover your data. ", {
 						
 							font: "bold 20px Arial", 
 							fill: "black",
@@ -257,10 +254,9 @@ class Event_12 extends Phaser.Scene
 				{
 					this.wrong.play();
 					
-					this.add.text(240,200, 'The mission fails, it seems like the hacker has\n'+
-					 						'better intelligence than you. He doesn’t fall into\n'+
-					 						'your trap. You pay out some money to hacker for\n'+ 
-					 						'unlocking the computer. ', {
+					this.add.text(240,200, "The mission fails. It seems like the hacker is smarter \n"+
+					 					   "than you. He doesn’t fall into your trap. You pay ransom \n"+
+					 					   "money to the hacker to unlock the computer." , {
 
 							font: "bold 20px Arial", 
 							fill: "black", 

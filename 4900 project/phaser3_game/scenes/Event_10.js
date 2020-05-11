@@ -1,13 +1,14 @@
-var event10 = "One day, You get an email from your service\n"+
-			  "providers about the recent news that dropbox,\n"+ 
-			  "one drive, and google drive get hacked by some\n"+
-			  "unknown users.Although providers recover \n"+
-			  "immediately, everyone's data is recovered.\n"+
-			  "However, your boss is concern it will happen again\n"+
-			  "because the company has huge files in their system.\n"+
-			  "Boss wonders if you can do backup again for \n"+
-			  "a long period. ";
+var event10 = 
 	
+			  "One day, You get an email from your service \n"+
+			  "providers about the recent news that Dropbox, \n"+
+			  "OneDrive, and Google Drive are all hacked. Although\n"+
+			  "the providers recover immediately and everyone’s \n"+
+			  "data survives, your boss is worried that it will \n"+
+			  "happen again. Your company has a huge amount of\n"+
+			  "data on their servers and you are too reliant on \n"+
+			  "them. Your boss wants to know if you can backup \n"+
+			  "data in a different way."
 
 var bonus = 200;
 var defaultIncome = 500;
@@ -136,11 +137,11 @@ class Event_10 extends Phaser.Scene
 				{
 					this.correct.play();
 
-					this.add.text(240,200, 'Good job! Boss likes your plan. Internal/external\n'+
-										   'device is the one he looking for. It has a very \n'+
-										   'good price and it can store a huge file for a \n'+
-										   'long period time. Now boss can backup multiple \n'+
-										   'time in case one get damaged.', {
+					this.add.text(240,200, "Good job! Your boss likes your plan. An internal/external \n"+
+					 					   "device is the one he is looking for. It is reasonably \n"+
+					 					   "priced and can store large files for a long period of \n"+
+					 					   "time. Your boss can backup the same file multiple times \n"+
+					 					   "just in case one gets damaged.", {
 						
 						font: "bold 20px Arial", 
 						fill: "black",
@@ -166,10 +167,10 @@ class Event_10 extends Phaser.Scene
 				{
 					this.wrong.play();
 
-					this.add.text(240,200, 'No! You’re wrong. This is not what he looking for.\n'+
-					 					   'There must have a better one than the one you owned.\n'+
-					 					   'The plan you owned is either has a large space or \n'+
-					 					   'short lifetime but not both.', {
+					this.add.text(240,200, "No! You’re wrong. This is not what he is looking for. \n"+
+					 					   "There must be a better one than the one you own. The \n"+
+					 					   "plan you own allows for either a large amount of space \n"+
+					 					   "or a long lifetime but not both.", {
 
 							font: "bold 20px Arial", 
 							fill: "black", 
@@ -229,10 +230,10 @@ class Event_10 extends Phaser.Scene
 
 					this.correct.play();
 
-					this.add.text(240,200, 'Nice! Although it is not the one that boss needs, you\n'+
-					 						'successfully convince your boss to pay more money\n'+
-					 						'from the budget for a better security system. Your\n'+
-					 						'boss feels safer about his company’s information now', {
+					this.add.text(240,200, "Nice! Although it is not the one that your boss needs,\n"+
+					  					   "you successfully convince your boss to allocate more \n"+
+					  					   "money to the budget for a better security system. Your \n"+
+					  					   "boss feels safer about his company’s information now.", {
 						
 							font: "bold 20px Arial", 
 							fill: "black",
@@ -258,9 +259,9 @@ class Event_10 extends Phaser.Scene
 				{
 					this.wrong.play();
 					
-					this.add.text(240,200, 'OMG! You waste your money to pay the data security\n'+
-					 						'The system still gets hacked and this time\n'+
-					 						'some part of your data is lost and not recoverable.', {
+					this.add.text(240,200, "OMG! You wasted your money to pay for the data security. \n"+
+					 					   "The system still gets hacked and this time, some of your \n"+
+					 					   "data is lost and not recoverable.", {
 
 							font: "bold 20px Arial", 
 							fill: "black", 

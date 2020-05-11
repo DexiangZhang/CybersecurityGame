@@ -1,11 +1,12 @@
-var event11 = "While you are working on your department, you get\n"+
-			  "a call from the boss saying that there are some\n"+
-			  "secure files in his computer. He wants you\n"+
-			  "to bring the data to his location as fast as\n"+
-			  "possible. He doesn’t want anyone in his company\n"+
-			  "know and order you to bring it out without catch\n"+
-			  "any attention. He only trusts you.";
-	
+var event11 = 
+
+			  "While you are working, you get a call from the boss \n"+
+			  "saying that there are some secure files in his \n"+
+			  "computer. He wants you to bring the data to his \n"+
+			  "location as fast as possible. He doesn’t want \n"+
+			  "anyone in his company to know about this trip and \n"+
+			  "orders you bring the files without attracting any \n"+
+			  "attention. He trusts only you.";
 
 var bonus = 200;
 var defaultIncome = 500;
@@ -133,13 +134,12 @@ class Event_11 extends Phaser.Scene
 				{
 					this.correct.play();
 
-					this.add.text(240,200, 'Well done! USB is the only option in this case.\n'+
-											'It doesn’t occupy much physical space and backup\n'+
-											'speed is good when you only has few data. You \n'+
-											'can easily bring it out to other places epically\n'+
-											'when you need to use it in other portal devices\n'+
-											'such as a computer. It is universal accept by \n'+
-											'people in such case. ', {
+					this.add.text(240,200, "Well done! USB is the only option in this case. It \n"+
+										   "doesn’t occupy much physical space and the backup \n"+
+										   "speed is good when you store such a small amount of \n"+
+										   "data. You can easily bring it out to other places \n"+
+										   "especially when you need to use it in other devices  \n"+
+										   "such as a computer. It is universally accepted." , {
 						
 						font: "bold 20px Arial", 
 						fill: "black",
@@ -165,10 +165,10 @@ class Event_11 extends Phaser.Scene
 				{
 					this.wrong.play();
 
-					this.add.text(240,200, 'Sorry! The current plan you have right now is not\n'+
-					 						'working very well in this case. You should think\n'+
-					 						'about something small and easy to carry on. Since\n'+
-					 						'the boss doesn’t want anyone to know ', {
+					this.add.text(240,200, "Sorry! The current plan you have is not working very \n"+
+										   "well in this case. You should instead think of something \n"+
+										   "small and easy to carry, since the boss doesn’t want\n"+
+										   "anyone to know about the transfer.", {
 
 							font: "bold 20px Arial", 
 							fill: "black", 
@@ -228,11 +228,10 @@ class Event_11 extends Phaser.Scene
 
 					this.correct.play();
 
-					this.add.text(240,200, 'Boss feels a little disappointing to you but he \n'+
-											'understands it might be difficult for a new worker.\n'+
-											'He sends you a picture of what he looking for and \n'+
-											'tells you to borrow this item and then transfers\n'+ 
-											'data to him. ', {
+					this.add.text(240,200, "Your boss feels a little disappointed in you but he \n"+
+										   "understands it might be difficult for a new worker. He  \n"+
+										   "sends you a picture of what he is looking for and tells \n"+
+										   "you to borrow this item and then transfer the data to him.", {
 						
 							font: "bold 20px Arial", 
 							fill: "black",
@@ -258,10 +257,10 @@ class Event_11 extends Phaser.Scene
 				{
 					this.wrong.play();
 
-					this.add.text(240,200, 'Boss is upset about your response and comes to the\n'+
-					 						'company to pick up data by himself. He thinks you\n'+
-					 						'are not doing a good job and deducted some money\n'+
-					 						'from your budget.', {
+					this.add.text(240,200, "Your boss is upset about your response and comes to the \n"+
+					 					   "company to pick up data by himself. He thinks you are \n"+
+					 					   "not doing a good job and deducted some money from your \n"+
+					 					   "department.", {
 
 							font: "bold 20px Arial", 
 							fill: "black", 

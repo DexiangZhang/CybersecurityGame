@@ -1,13 +1,13 @@
-var event8 = "There is a new worker hires by the company and\n"+
-			 "becomes the second worker in your department.\n"+
-			 "However, one day he left out for no reason,\n"+
-			 "and you find out your data get destroyed.\n"+
-			 "Boss finds out he is an enemy’s spy and\n"+
-			 "gets angry. Boss asks you to see if the data\n"+
-			 "can be retrieve back. Otherwise, the company\n"+
-			 "would be in a potential risk in the future.";
+var event8 = 
 			
-	
+			"There is a new worker hired by the company who \n"+
+			"becomes the second worker in your department. \n"+
+			"However, one day he quits and you subsequently \n"+
+			"discover that all of your computers are broken \n"+
+			"and your data is destroyed. Turns out, he was a \n"+
+			"mole from a different company! Your boss wants you\n"+
+			"to see if you can retrieve the missing data so that \n"+
+			"the company will not be at risk in the future.";
 
 var bonus = 200;
 var defaultIncome = 500;
@@ -122,12 +122,11 @@ class Event_8 extends Phaser.Scene
 				{
 					this.correct.play();
 
-					this.add.text(240,200, 'Lucky you, becasue of the cloud plan that you bought\n'+ 
-										   'before. You can get old data back because for this\n'+
-										   'plan you just need the internet to redownload data\n'+
-										   'The data is stored in the “cloud”, physical\n'+
-										   'damage to your computer won’t affect your data. You\n'+
-										   'can retrieve it in any device at any time. ', {
+					this.add.text(240,200, "Lucky you, because of the cloud plan that you bought \n"+
+					 					   "before. You can get your old data back; all that you \n"+
+					 					   "need is an Internet connection. Because the data is \n"+
+					 					   "stored in the “cloud,” physical damage to your computer \n"+
+					 					   "won’t affect your data.", {
 						
 						font: "bold 20px Arial", 
 						fill: "black",
@@ -153,10 +152,10 @@ class Event_8 extends Phaser.Scene
 				{
 					this.wrong.play();
 
-					this.add.text(240,200, 'Mhmmm, are you sure you can backup data again?\n'+
-										   'Don’t you see all the devices are damaged? If\n'+
-										   'you do not back up data online or in someplace\n'+
-										   'else, you have no way to get data back again.', {
+					this.add.text(240,200, "Mhmmm, are you sure you can backup data again? Don’t you\n"+
+					 					   "see that all the devices are damaged? If you have not \n"+
+					 					   "backed up your data online or in another location, you \n"+
+					 					   "have no way to get your data back again.", {
 
 							font: "bold 20px Arial", 
 							fill: "black", 
@@ -215,11 +214,10 @@ class Event_8 extends Phaser.Scene
 				{
 					this.correct.play();
 
-					this.add.text(240,200, 'You find out with evidence that shows the spy is\n'+
-										   'the enemy’s worker. Both of companies go to court\n'+
-										   'and court decides that your enemy is guilty. \n'+
-										   'You discover that they backup your company’s\n'+
-										   'data personally and tell them to return back. ', {
+					this.add.text(240,200, "You find evidence showing that the worker was a mole.\n"+
+										   "Your boss sues his company in court; the other company \n"+
+										   "is found guilty. You discover that they kept a backup \n"+
+										   "of your data and they are forced to return it.", {
 						
 							font: "bold 20px Arial", 
 							fill: "black",
@@ -245,9 +243,9 @@ class Event_8 extends Phaser.Scene
 				{
 					this.wrong.play();
 					
-					this.add.text(240,200, 'Your company is in the depression for backup data\n'+
-										   'loss for one month. The money company lost this\n'+
-										   'is deducted from your department’s budget', {
+					this.add.text(240,200, "Your company lost a lot of money because the data was\n"+
+					 					   "lost for. The money that the company lost for this time\n"+
+					 					   "is deducted from your department’s budget.", {
 
 							font: "bold 20px Arial", 
 							fill: "black", 

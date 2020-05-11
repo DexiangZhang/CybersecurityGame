@@ -1,13 +1,19 @@
 var textSentence_1 = [
 
-			"Hi, welcome to Tech Inc.  \n I’ve been waiting for \n" +
-			"you for a long time! I \n don't like to talk too much.\n",
-			"Let’s go straight to the topic. \n You are responsible"+
-			"for our \n data backup team and get \n at least $3000 at ",
-			"the end of the year. I give \n you $1000 for the "+
-			"\n beginning. Don't make me \n disappoint. Otherwise,",
-			"you know what is going to \n happen to you. HAHAHA..."
+		"Hi, welcome to Tech Inc. \nYou are responsible for \n" +
+		"our data backup team. \nEvery month, you will \n  ",
+		"face a situation that \nwill demand your attention.\n" +
+		"Please choose your course \nof action wisely to solve \n ",
+		"the problem. If you are \nsuccessful, you will be \n " +
+		"paid but if you are not, \nyou might lose money. If \n ",
+		"you are good at your job, \nyou can earn at least\n " +
+		"$3,000 by the end of the \n year! I am giving you  \n ",
+		"$1,000 in start-up funds \nto buy a data backup plan."
+		
 		];
+
+		
+
 
 var index =0;
 

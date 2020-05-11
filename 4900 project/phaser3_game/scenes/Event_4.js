@@ -1,8 +1,14 @@
-var event4 = "The company’s internet gets immediately shut down \nbecause the current internet provider " +
-			"has a technical \nproblem. Although they already immediately \nrecognized this issue." +
-			"They still needs to take a few \ndays to fix it, but you need to backup data within " +
-			"\nfew days for your company. So far the company only has \none way to backup data," +
-			"what should you do? ";
+var event4 = 
+
+			"The company’s Internet gets immediately shut down \n"+
+			"because the current Internet provider has a \n"+
+			"technical problem. Although they already \n"+
+			"immediately recognized this issue, they still need \n"+
+			"to take a few days to fix it. In the meantime, you \n"+
+			"need to backup your data for those days. So far the \n"+
+			"company only has one way to backup data. \n"+
+			"What should you do?";
+
 	
 
 var bonus = 200;
@@ -132,8 +138,10 @@ class Event_4 extends Phaser.Scene
 				{
 					this.correct.play();
 
-					this.add.text(240,200, 'Nicely done! External storage doesn’t need a' +
-						'strong \ninternet connection. You can backup data to the \ncomputer or out the computer.', {
+					this.add.text(240,200, "Nicely done! External storage doesn’t need a strong \n"+
+					 					   "internet connection. You can backup data to the \n"+
+					 					   "computer or retrieve data from the computer as backup\n"+
+					 					   "in case data in the computer is corrupted.", {
 						
 						font: "bold 20px Arial", 
 						fill: "black",
@@ -159,8 +167,9 @@ class Event_4 extends Phaser.Scene
 				{
 					this.wrong.play();
 
-					this.add.text(240,200, 'Mhmmm…You should think about your previous decision \nyou had made for your data backup plan.' + 
-						'Are you sure\n it can do this task without internet?', {
+					this.add.text(240,200, "Mhmmm…You should think about your previous decision you\n"+
+					 					   "made for your data backup plan. Are you sure it can do\n"+
+					 					   "this task without an Internet connection?", {
 
 							font: "bold 20px Arial", 
 							fill: "black", 
@@ -219,8 +228,9 @@ class Event_4 extends Phaser.Scene
 				{
 					this.correct.play();
 
-					this.add.text(240,200, 'Boss thinks you are right and allows you to work \n' + 
-						'job with your computer at home. You can \nuse your internet to complete the task now', {
+					this.add.text(240,200, "Your boss thinks you are right and allows you to work\n"+
+					 					   "on the job with your computer at home. You can use the \n"+
+					 					   "Internet to complete the task now.", {
 						
 							font: "bold 20px Arial", 
 							fill: "black",
@@ -246,8 +256,10 @@ class Event_4 extends Phaser.Scene
 				{
 					this.wrong.play();
 					
-					this.add.text(240,200, 'Boss gets angry and yells at you saying that you are \nnot doing the job properly.'+
-						'He deducting some money \nfrom your budget to hire another person temporarily \nto do the job.', {
+					this.add.text(240,200, "Your boss gets angry and yells at you saying that you \n"+
+					 					   "are not doing the job properly. He deducted some amount \n"+
+					 					   "from your budget to hire another person temporarily to \n"+
+					 					   "do the job.", {
 
 							font: "bold 20px Arial", 
 							fill: "black", 

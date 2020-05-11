@@ -63,7 +63,9 @@ class EndingMenu extends Phaser.Scene
 			fill: "red"
 		});
 	
-		var speech = this.add.text(370,110, "Thank you for your hard\n working this year. \nLet's see how you doing \nthis year", {
+		var speech = this.add.text(370,110, "Thank you for working so \n"+
+								 			"hard this year. Let's see \n"+
+								 			"how you did this year.", {
 			font: "23px Arial", 
 			fill: "black"
 		});

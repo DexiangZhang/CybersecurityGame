@@ -1,9 +1,11 @@
-var event6 = "Boss brings his kid to the company this month. \n" +
-			 "While you are working, his kid brings a water bottle\n"+
-			 "and walks pass you. Accidentally he falls off the\n"+
-			 "ground. The water spills out into your computer \n" +
-			 "and then it shuts down. You need to retrieve \n"+
-			 "back the data!";
+var event6 =
+
+			 "Boss brings his kid to the company this month. \n"+
+			 "While you are working, his kid brings a water \n"+
+			 "bottle and walks past you. Oops! He falls down.\n"+
+			 "The water spills out onto your computer and then \n"+
+			 "your computer shuts down. You need to retrieve the \n"+
+			 "data that was on it!";
 	
 
 var bonus = 200;
@@ -134,11 +136,11 @@ class Event_6 extends Phaser.Scene
 				{
 					this.correct.play();
 
-					this.add.text(240,200, 'Yaaa! You find out your data can retrieve because\n'+
-										   'you use cloud technique to backup data last time.\n'+
-										   'The data stores in another place’s server; you can\n'+
-										   'retrieve anytime virtually no matter how broken \n'+
-										   'your device is while the internet is available.  ', {
+					this.add.text(240,200, "Hooray! You find out your data can be retrieved because \n"+
+					 					   "you used cloud technique to backup last time. The data is\n"+
+					 					   "stored on a server in a different location; you can\n"+
+					 					   "retrieve it any time no matter how broken your device is, \n"+
+					 					   "while the Internet is available."  , {
 						
 						font: "bold 20px Arial", 
 						fill: "black",
@@ -164,9 +166,9 @@ class Event_6 extends Phaser.Scene
 				{
 					this.wrong.play();
 
-					this.add.text(240,200, 'Uh-oh! Your plan is not going to work this time\n'+
-										   'because the device you stored in before is either \n'+
-										   'broken or corrupted because of water.', {
+					this.add.text(240,200, "Uh oh. Your plan is not going to work this time because\n"+
+					 					   "the device you stored the data in before is either broken\n"+
+					 					   "or corrupted because of water.", {
 
 							font: "bold 20px Arial", 
 							fill: "black", 
@@ -226,9 +228,9 @@ class Event_6 extends Phaser.Scene
 
 					this.correct.play();
 
-					this.add.text(240,200, 'Boss forgives you and just tells you to do the stuff\n'+
-										   'again since the instruction is still there. However,\n'+
-										   'the time is being wasted.', {
+					this.add.text(240,200, "Your boss forgives you and just tells you to replicate\n"+
+					 					   "the work and no great harm will come from losing the data.\n"+
+					 					   "However, time is wasted.", {
 						
 							font: "bold 20px Arial", 
 							fill: "black",
@@ -254,8 +256,8 @@ class Event_6 extends Phaser.Scene
 				{
 					this.wrong.play();
 
-					this.add.text(240,200, 'Boss yells at you for the carelessness and deducts\n'+
-										   'money from the current balance in your department. ', {
+					this.add.text(240,200, "Your boss yells at you for being so careless and deducts\n"+
+					 					   "money from the current balance in your department.", {
 
 							font: "bold 20px Arial", 
 							fill: "black", 
