@@ -3,6 +3,11 @@ html
   	scroll-behavior: smooth;
 }
 
+th
+{
+	font-size: 1.5em;
+}
+
 .banner img 
 {
 	width: 80px;
@@ -95,3 +100,12 @@ html
 {
 	font-size: 2vw;
 }
+
+#topic
+{
+	font-size: 1.2em;
+	font-weight: bold;
+	text-align: center;
+}
+
+
