@@ -117,7 +117,7 @@ class Event_2 extends Phaser.Scene
 
 
 
-		this.choice_1 = this.add.text(100, 450, 'Backup data Now', { 
+		this.choice_1 = this.add.text(100, 450, 'Backup data now', { 
 			font: "bold 30px Arial", 
 			fill: "white" 
 		});
@@ -209,7 +209,7 @@ class Event_2 extends Phaser.Scene
 
 
 
-		this.choice_2 = this.add.text(600, 450, 'Hope it just a fake news', { 
+		this.choice_2 = this.add.text(600, 450, 'Hope it is just fake news', { 
 			font: "bold 30px Arial", 
 			fill: "white" 
 		});

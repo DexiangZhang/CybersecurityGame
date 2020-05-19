@@ -69,12 +69,12 @@ class MainMenu extends Phaser.Scene
 
 
 
-		/*//testing case for jumping specific scene for checking visual laypout
+		//testing case to jumping specific scene for checking visual laypout
 		// money will be underfine casued it just jumping to the game scene
-		if(Phaser.Input.Keyboard.JustDown(this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.Q)))
-		{
-			this.scene.start("ending");
-		}*/
+		//if(Phaser.Input.Keyboard.JustDown(this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.Q)))
+		//{
+		//	this.scene.start("scene_11");
+		//}
 
 	}
 }

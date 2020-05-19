@@ -197,12 +197,7 @@ class Event_11 extends Phaser.Scene
 			}, this);
 
 
-
-
-
-
-
-		this.choice_2 = this.add.text(550, 450, 'It is not possible to bring out', { 
+		this.choice_2 = this.add.text(320, 450, 'It is not possible given current data backups', { 
 			font: "bold 30px Arial", 
 			fill: "white" 
 		});

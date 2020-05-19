@@ -113,7 +113,7 @@ class Event_6 extends Phaser.Scene
 
 
 
-		this.choice_1 = this.add.text(100, 450, 'You look at your plan', { 
+		this.choice_1 = this.add.text(150, 420, 'Your backup plan will allow you to recover your data', { 
 			font: "bold 30px Arial", 
 			fill: "white" 
 		});
@@ -202,7 +202,7 @@ class Event_6 extends Phaser.Scene
 
 
 
-		this.choice_2 = this.add.text(600, 450, 'Report to boss', { 
+		this.choice_2 = this.add.text(400, 510, 'Report to boss', { 
 			font: "bold 30px Arial", 
 			fill: "white" 
 		});

@@ -116,7 +116,7 @@ class Event_4 extends Phaser.Scene
 		this.wrong = this.sound.add("wrong_sound");
 
 
-		this.choice_1 = this.add.text(100, 450, 'I believe my plan work', { 
+		this.choice_1 = this.add.text(150, 420, 'I believe our existing backup plan will work', { 
 			font: "bold 30px Arial", 
 			fill: "white" 
 		});
@@ -203,7 +203,7 @@ class Event_4 extends Phaser.Scene
 
 
 
-		this.choice_2 = this.add.text(600, 450, 'Tell boss the situation', { 
+		this.choice_2 = this.add.text(350, 510, 'Tell boss the situation', { 
 			font: "bold 30px Arial", 
 			fill: "white" 
 		});

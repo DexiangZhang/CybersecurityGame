@@ -1,23 +1,24 @@
-var textSentence_1 = [
+var textSentence_1 = 
 
-		"Hi, welcome to Tech Inc. \nYou are responsible for \n" +
-		"our data backup team. \nEvery month, you will \n  ",
-		"face a situation that \nwill demand your attention.\n" +
-		"Please choose your course \nof action wisely to solve \n ",
-		"the problem. If you are \nsuccessful, you will be \n " +
-		"paid but if you are not, \nyou might lose money. If \n ",
-		"you are good at your job, \nyou can earn at least\n " +
-		"$3,000 by the end of the \n year! I am giving you  \n ",
-		"$1,000 in start-up funds \nto buy a data backup plan."
+		"Hi, welcome to Tech Inc. You are responsible \n" +
+		"for our data backup team. Every month, you \n" +
+		"will face a situation that will demand your\n" +
+		"attention. Please choose your course of action \n" +
+		"wisely to solve the problem. \n " + 
+		"\n " +
+		"If you are successful, you will be paid but \n " +
+		"if you are not, you might lose money. If you\n " +
+		"are good at your job, you can earn at least \n " +
+		"$3,000 by the end of the year! I am giving\n" +
+		"you $1,000 in start-up funds to buy a data \n"+
+		"backup plan.";
 		
-		];
-
-		
-
 
 var index =0;
 
 var speech;
+
+var currentBudget = 1000;
 
 class StoryScene extends Phaser.Scene
 {
@@ -38,7 +39,7 @@ class StoryScene extends Phaser.Scene
 
 		this.load.image("bottom", "assets/images/bottom_Space.jpg");
 
-
+		this.load.audio('clickButton', 'assets/music/click.mp3');
 
 	}
 
@@ -56,16 +57,16 @@ class StoryScene extends Phaser.Scene
 		character_Boss.setScale(0.4);
 
 		var text_Field =  this.add.image(350,50,"text_box");
-		text_Field.setOrigin(0,0);
-		text_Field.setScale(0.6);
+		text_Field.setOrigin(0.5,0.1);
+		text_Field.setScale(1.1);
 
 
-		var hint = this.add.text(370,220, "'Press SPACE to Continue' ", {
+		var hint = this.add.text(280,350, "'Press SPACE to Continue' ", {
 			font: "20px Arial",
 			fill: "red"
 		});
 	
-		speech = this.add.text(370,110, textSentence_1[index], {
+		speech = this.add.text(120,50, textSentence_1, {
 			font: "23px Arial", 
 			fill: "black"
 		});
@@ -73,33 +74,23 @@ class StoryScene extends Phaser.Scene
 
 		this.spaceBar = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
 		
-
-		
 	}
 
 	update()
 	{
-
-		var currentBudget = 1000;
-
 		if (Phaser.Input.Keyboard.JustDown(this.spaceBar))
 		{
-			index +=1;
-
-			if(index > 4)
-			{
+			this.click = this.sound.add("clickButton");
+			this.click.play();
+			
 				this.scene.start("scene_1", {
 					money: currentBudget,
 					hasInternalStorage: false,
 					hasCloudStorage: false,
 					hasUSBStorage: false,
 					hasPrinterStorage: false
-				});
-			}
-
-     		speech.setText(textSentence_1[index]);
+				});     		
     	}
-
-
+		
 	}
 }

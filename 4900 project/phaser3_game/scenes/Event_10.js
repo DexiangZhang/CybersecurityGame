@@ -1,6 +1,6 @@
 var event10 = 
 	
-			  "One day, You get an email from your service \n"+
+			  "One day, you get an email from your service \n"+
 			  "providers about the recent news that Dropbox, \n"+
 			  "OneDrive, and Google Drive are all hacked. Although\n"+
 			  "the providers recover immediately and everyone’s \n"+
@@ -115,7 +115,7 @@ class Event_10 extends Phaser.Scene
 
 
 
-		this.choice_1 = this.add.text(100, 450, 'show your idea to boss ', { 
+		this.choice_1 = this.add.text(230, 420, 'Our existing data plan is good enough', { 
 			font: "bold 30px Arial", 
 			fill: "white" 
 		});
@@ -204,7 +204,7 @@ class Event_10 extends Phaser.Scene
 
 
 
-		this.choice_2 = this.add.text(550, 450, 'pay more money for security', { 
+		this.choice_2 = this.add.text(300, 510, 'pay more money for security', { 
 			font: "bold 30px Arial", 
 			fill: "white" 
 		});

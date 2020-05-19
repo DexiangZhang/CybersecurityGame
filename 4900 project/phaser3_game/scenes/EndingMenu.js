@@ -83,12 +83,13 @@ class EndingMenu extends Phaser.Scene
 	}
 
 	update()
-	{
-
-		
+	{		
 
 		if (Phaser.Input.Keyboard.JustDown(this.spaceBar))
 		{
+			this.click = this.sound.add("clickButton");
+			this.click.play();
+
 				if(this.money >= 3000)
 				{
 					this.winner.play();

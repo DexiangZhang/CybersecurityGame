@@ -81,7 +81,7 @@ class Event_8 extends Phaser.Scene
 		event.setOrigin(0,0);
 		event.setScale(0.2);
 
-		this.add.text(900,20, "Auguest", {
+		this.add.text(900,20, "August", {
 			font: "bold 30px Arial", 
 			fill: "Red",
 

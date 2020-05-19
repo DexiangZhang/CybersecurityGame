@@ -113,6 +113,11 @@ class Event_1 extends Phaser.Scene
 		this.cloud = this.add.image(100,450,"cloud_storage").setOrigin(0,0);
 		this.cloud.setScale(0.2);
 
+		this.name_1 = this.add.text(100,420, "Cloud Storage", {
+			font: "20px Arial",
+			fill: "white"
+		});
+
 		this.cloud.setInteractive();
 		this.cloud.on("pointerover", () =>
 			{
@@ -150,6 +155,11 @@ class Event_1 extends Phaser.Scene
 		this.internal = this.add.image(350,450,"internal_storage").setOrigin(0,0);
 		this.internal.setScale(0.2);
 
+		this.name_2 = this.add.text(350,420, "Internal Storage", {
+			font: "20px Arial",
+			fill: "white"
+		});
+
 		this.internal.setInteractive();
 		this.internal.on("pointerover", () =>
 			{
@@ -186,6 +196,11 @@ class Event_1 extends Phaser.Scene
 		this.printer = this.add.image(600,450,"printer_storage").setOrigin(0,0);
 		this.printer.setScale(0.2);
 
+		this.name_3 = this.add.text(600,420, "Printer Storage", {
+			font: "20px Arial",
+			fill: "white"
+		});
+
 		this.printer.setInteractive();
 		this.printer.on("pointerover", () =>
 			{
@@ -220,6 +235,11 @@ class Event_1 extends Phaser.Scene
 
 		this.USB = this.add.image(850,450,"USB_storage").setOrigin(0,0);
 		this.USB.setScale(0.2);
+
+		this.name_4 = this.add.text(850,420, "USB Storage", {
+			font: "20px Arial",
+			fill: "white"
+		});
 
 		this.USB.setInteractive();
 		this.USB.on("pointerover", () =>
